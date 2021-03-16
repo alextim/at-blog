@@ -1,7 +1,7 @@
 const slugify = require('at-slugify');
 const translit = require('at-translit');
 
-const extractData = require('../../../../at-site/src/gatsby/helpers/extractData');
+const extractData = require('at-site-core');
 
 const compString = (a, b) => {
   if (a > b) {

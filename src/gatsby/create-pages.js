@@ -1,8 +1,5 @@
 /* eslint-disable no-console */
-const wrapper = require('../../../at-site/src/gatsby/helpers/promise-wrapper');
 const withOptions = require('./plugin-options');
-
-// const { createTagPages, createCategoryPages, createYearPages } = require('./create-pages-utils');
 
 const compString = (a, b) => {
   if (a > b) {
@@ -61,39 +58,37 @@ module.exports = async ({ graphql, actions, reporter }, pluginOptions) => {
   const postDefaultTemplate = require.resolve(`${templatesDir}post.jsx`);
 
   console.log('=====createPosts=====');
-  const result = await wrapper(
-    graphql(`
-      {
-        site {
-          siteMetadata {
-            siteUrl
-            locales {
-              code
-            }
-          }
-        }
-        posts: allMdPost(limit: 1000, sort: { fields: [datePublished], order: DESC }) {
-          edges {
-            node {
-              id
-              template
-              tags {
-                title
-                to
-              }
-              category {
-                title
-                to
-              }
-              slug
-              locale
-              year
-            }
+  const result = await graphql(`
+    {
+      site {
+        siteMetadata {
+          siteUrl
+          locales {
+            code
           }
         }
       }
-    `),
-  );
+      posts: allMdPost(limit: 1000, sort: { fields: [datePublished], order: DESC }) {
+        edges {
+          node {
+            id
+            template
+            tags {
+              title
+              to
+            }
+            category {
+              title
+              to
+            }
+            slug
+            locale
+            year
+          }
+        }
+      }
+    }
+  `);
 
   if (result.errors) {
     reporter.panic(result.errors);
