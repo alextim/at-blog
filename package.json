@@ -1,0 +1,33 @@
+{
+  "name": "at-blog",
+  "description": "Markdown blog",
+  "private": true,
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Oleksii Tymoshenko <buildmnt@gmail.com>",
+  "keywords": [
+    "gatsby",
+    "gatsbyjs"
+  ],
+  "main": "n/a",
+  "homepage": "https://github.com/alextim/at-blog",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alextim/at-blog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alextim/at-blog/issues"
+  },
+  "scripts": {
+  },
+  "dependencies": {
+    "at-site-core": "https://github.com/alextim/at-site-core.git",
+    "at-slugify": "https://github.com/alextim/slugify.git",
+    "at-translit": "https://github.com/alextim/translit.git"
+  },
+  "devDependencies": {
+  },
+  "peerDependencies": {
+    "gatsby": ">=3.0.0"
+  }
+}
