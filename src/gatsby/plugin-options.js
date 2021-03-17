@@ -7,8 +7,8 @@ module.exports = (pluginOptions) => ({
   postsDir: pluginOptions.postsDir || 'blog/posts',
   pagesDir: pluginOptions.pagesDir || 'blog/pages',
   templatesDir: pluginOptions.templatesDir,
-  CREATE_TAG_PAGES: pluginOptions.CREATE_TAG_PAGES ?? false,
-  CREATE_CATEGORY_PAGES: pluginOptions.CREATE_CATEGORY_PAGES ?? false,
-  CREATE_YEAR_PAGES: pluginOptions.CREATE_YEAR_PAGES ?? false,
+  CREATE_TAG_PAGES: !!pluginOptions.CREATE_TAG_PAGES,
+  CREATE_CATEGORY_PAGES: !!pluginOptions.CREATE_CATEGORY_PAGES,
+  CREATE_YEAR_PAGES: !!pluginOptions.CREATE_YEAR_PAGES,
   i18n: pluginOptions.i18n,
 });
