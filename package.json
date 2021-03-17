@@ -13,7 +13,7 @@
   "homepage": "https://github.com/alextim/at-blog",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alextim/at-blog.git"
+    "url": "https://github.com/alextim/at-blog.git"
   },
   "bugs": {
     "url": "https://github.com/alextim/at-blog/issues"
