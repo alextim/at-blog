@@ -13,7 +13,7 @@
   "homepage": "https://github.com/alextim/at-blog",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alextim/at-blog.git"
+    "url": "git://github.com/alextim/at-blog.git"
   },
   "bugs": {
     "url": "https://github.com/alextim/at-blog/issues"
@@ -29,7 +29,6 @@
     "gatsby": ">=3.1.1"
   },
   "publishConfig": {
-    "name": "@alextim/at-blog",
     "registry": "https://npm.pkg.github.com/alextim"
   }
 }
