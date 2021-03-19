@@ -216,7 +216,6 @@ module.exports = async ({ graphql, actions, reporter }, pluginOptions) => {
               context: {
                 locale,
                 category,
-                subpath: to,
                 limit: cardsPerPage,
                 skip: i * cardsPerPage,
                 numPages,
@@ -259,7 +258,6 @@ module.exports = async ({ graphql, actions, reporter }, pluginOptions) => {
               context: {
                 locale,
                 tag,
-                subpath: to,
                 limit: cardsPerPage,
                 skip: i * cardsPerPage,
                 numPages,
