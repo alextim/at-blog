@@ -1,7 +1,7 @@
 {
   "name": "at-blog",
   "description": "Markdown blog",
-  "private": true,
+  "private": false,
   "version": "0.0.2",
   "license": "MIT",
   "author": "Oleksii Tymoshenko <buildmnt@gmail.com>",
@@ -27,5 +27,9 @@
   "devDependencies": {},
   "peerDependencies": {
     "gatsby": ">=3.1.1"
+  },
+  "publishConfig": {
+    "name": "@alextim/at-blog",
+    "registry": "https://npm.pkg.github.com/alextim"
   }
 }
