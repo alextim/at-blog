@@ -18,7 +18,9 @@
   "bugs": {
     "url": "https://github.com/alextim/at-blog/issues"
   },
-  "scripts": {},
+  "scripts": {
+    "test": ""
+  },
   "dependencies": {
     "at-site-core": "alextim/at-site-core",
     "at-slugify": "alextim/slugify",
