@@ -18,15 +18,13 @@
   "bugs": {
     "url": "https://github.com/alextim/at-blog/issues"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {
     "at-site-core": "alextim/at-site-core",
     "at-slugify": "alextim/slugify",
     "at-translit": "alextim/translit"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "peerDependencies": {
     "gatsby": ">=3.1.1"
   }
