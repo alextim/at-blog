@@ -1,7 +1,6 @@
 {
   "name": "@alextim/at-blog",
   "description": "Markdown blog",
-  "private": true,
   "version": "0.0.2",
   "license": "MIT",
   "author": "Oleksii Tymoshenko <buildmnt@gmail.com>",
