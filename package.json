@@ -1,5 +1,5 @@
 {
-  "name": "at-blog",
+  "name": "@alextim/at-blog",
   "description": "Markdown blog",
   "private": true,
   "version": "0.0.2",
@@ -22,15 +22,15 @@
     "test": ""
   },
   "dependencies": {
-    "at-site-core": "alextim/at-site-core",
-    "at-slugify": "alextim/slugify",
-    "at-translit": "alextim/translit"
+    "at-site-core": "github:alextim/at-site-core",
+    "at-slugify": "github:alextim/slugify",
+    "at-translit": "github:alextim/translit"
   },
   "devDependencies": {},
   "peerDependencies": {
     "gatsby": ">=3.1.1"
   },
-  "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
+  "WWWWpublishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
