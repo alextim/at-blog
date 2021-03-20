@@ -3,15 +3,7 @@ const translit = require('at-translit');
 
 const { extractData } = require('at-site-core');
 
-const compString = (a, b) => {
-  if (a > b) {
-    return 1;
-  }
-  if (a < b) {
-    return -1;
-  }
-  return 0;
-};
+const compString = require('./compString');
 
 module.exports = ({ node, actions, getNode, createNodeId, createContentDigest }, options) => {
   const { categoryPath, tagsPath, i18n } = options;

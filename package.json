@@ -15,14 +15,16 @@
     "url": "https://github.com/alextim/at-blog/issues"
   },
   "scripts": {
-    "test": ""
+    "test": "jest"
   },
   "dependencies": {
     "at-site-core": "github:alextim/at-site-core",
     "at-slugify": "github:alextim/slugify",
     "at-translit": "github:alextim/translit"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^26.6.3"
+  },
   "peerDependencies": {
     "gatsby": ">=3.1.1"
   },
