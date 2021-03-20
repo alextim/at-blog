@@ -1,12 +1,8 @@
 {
   "name": "@alextim/at-blog",
   "description": "Markdown blog",
-<<<<<<< HEAD
   "private": false,
-  "version": "0.1.0",
-=======
   "version": "0.2.0",
->>>>>>> 2600991dc92f38fccc9d271561e553892f0cf55b
   "license": "MIT",
   "author": "Oleksii Tymoshenko <buildmnt@gmail.com>",
   "keywords": [
