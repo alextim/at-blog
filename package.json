@@ -1,7 +1,7 @@
 {
   "name": "@alextim/at-blog",
   "description": "Markdown blog",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "license": "MIT",
   "author": "Oleksii Tymoshenko <buildmnt@gmail.com>",
   "keywords": [
@@ -30,5 +30,5 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
-  }  
+  }
 }
