@@ -1,4 +1,4 @@
-const slugify = require('at-slugify');
+const slugify = require('@alextim/slugify');
 const translit = require('at-translit');
 
 const { extractData } = require('at-site-core');

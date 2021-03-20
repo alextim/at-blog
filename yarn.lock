@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@alextim/slugify@^0.4.0":
+  version "0.4.0"
+  resolved "https://npm.pkg.github.com/download/@alextim/slugify/0.4.0/d6bdbd8a2c4b64b52eaa2e63bc5216e6d2ec1c779a5eea6350a4ac8b179fc493#d8a5021f562470e438b29316bcdff8be1ebc779a"
+  integrity sha512-YKqDqTWshFo+VQSR8pY5IFvUIv7LdncOC5VkRHZ4dmeS942REqe+jvbWHPqWY3X0vRSzRCbL+BB7eVE8qhcKxw==
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.12.13":
   version "7.12.13"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.12.13.tgz#dcfc826beef65e75c50e21d3837d7d95798dd658"
@@ -719,18 +724,6 @@ asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha1-x57Zf380y48robyXkLzDZkdLS3k=
-
-"at-site-core@github:alextim/at-site-core":
-  version "0.0.2"
-  resolved "https://codeload.github.com/alextim/at-site-core/tar.gz/5d2fb62f39513b61792994f568f9785118306742"
-
-"at-slugify@github:alextim/slugify":
-  version "0.0.1"
-  resolved "https://codeload.github.com/alextim/slugify/tar.gz/e3997e9a65491e65271b63eeb9a2705f57860365"
-
-"at-translit@github:alextim/translit":
-  version "0.0.1"
-  resolved "https://codeload.github.com/alextim/translit/tar.gz/cb25bfb6d940c303cd9c9dd934e6b8b2e18ffb30"
 
 atob@^2.1.2:
   version "2.1.2"
