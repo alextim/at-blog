@@ -1,7 +1,7 @@
 const slugify = require('@alextim/slugify');
-const translit = require('at-translit');
+const translit = require('@alextim/translit');
 
-const { extractData } = require('at-site-core');
+const { extractData } = require('@alextim/at-site-core');
 
 const compString = require('./compString');
 

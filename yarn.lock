@@ -7,6 +7,11 @@
   resolved "https://npm.pkg.github.com/download/@alextim/slugify/0.4.0/d6bdbd8a2c4b64b52eaa2e63bc5216e6d2ec1c779a5eea6350a4ac8b179fc493#d8a5021f562470e438b29316bcdff8be1ebc779a"
   integrity sha512-YKqDqTWshFo+VQSR8pY5IFvUIv7LdncOC5VkRHZ4dmeS942REqe+jvbWHPqWY3X0vRSzRCbL+BB7eVE8qhcKxw==
 
+"@alextim/translit@^0.4.0":
+  version "0.4.0"
+  resolved "https://npm.pkg.github.com/download/@alextim/translit/0.4.0/d87728eaa21808736ba2ed64dc0ed2e5022ec0516584120548c7d38b043b8572#a132260eb369f3b4c04ed7a94a84d646cfd94111"
+  integrity sha512-qjOSFE4rGLD96eOS2dpVTbDi4Hzy3vXxpBIfC06aca8bw88qNTm5Et6hTFI6ltu2dn6gm2LwmcDlvJThDFEIsw==
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.12.13":
   version "7.12.13"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.12.13.tgz#dcfc826beef65e75c50e21d3837d7d95798dd658"

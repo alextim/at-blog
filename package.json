@@ -1,7 +1,6 @@
 {
   "name": "@alextim/at-blog",
   "description": "Markdown blog",
-  "private": false,
   "version": "0.3.0",
   "license": "MIT",
   "author": "Oleksii Tymoshenko <buildmnt@gmail.com>",
@@ -19,12 +18,14 @@
     "test": "jest"
   },
   "dependencies": {
-    "@alextim/slugify": "^0.4.0"
+    "@alextim/slugify": "^0.4.0",
+    "@alextim/translit": "^0.4.0"
   },
   "devDependencies": {
     "jest": "^26.6.3"
   },
   "peerDependencies": {
+    "@alextim/at-site-core": ">=0.1.0",
     "gatsby": ">=3.1.1"
   },
   "publishConfig": {
