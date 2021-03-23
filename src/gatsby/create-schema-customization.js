@@ -5,7 +5,7 @@ module.exports = ({ actions }) => {
     interface Post implements Node {
       id: ID!
       title: String!
-      description: String
+      headline: String
       metaTitle: String
       metaDescription: String
       cover: Image
@@ -32,7 +32,7 @@ module.exports = ({ actions }) => {
 
     type MdPost implements Post & Node  @dontInfer {
       title: String!
-      description: String
+      headline: String
       metaTitle: String
       metaDescription: String
       cover: Image

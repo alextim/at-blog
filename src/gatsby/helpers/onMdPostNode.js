@@ -29,7 +29,7 @@ module.exports = ({ node, actions, getNode, createNodeId, createContentDigest },
 
   const {
     title,
-    description,
+    headline,
     metaTitle,
     metaDescription,
     cover,
@@ -49,9 +49,9 @@ module.exports = ({ node, actions, getNode, createNodeId, createContentDigest },
   const year = datePublished ? new Date(datePublished).getFullYear() : null;
   const fieldData = {
     title,
-    description,
+    headline,
     metaTitle: metaTitle || title,
-    metaDescription: metaDescription || description,
+    metaDescription: metaDescription || headline,
     cover,
     sections,
     html,
@@ -101,5 +101,5 @@ module.exports = ({ node, actions, getNode, createNodeId, createContentDigest },
   };
   */
   //    metaTitle: getMetaTitle(title, metaTitle, slug),
-  //    metaDescription: metaDescription || description || i18n.locales[locale].siteDescription,
+  //    metaDescription: metaDescription || headline || i18n.locales[locale].siteDescription,
 };
