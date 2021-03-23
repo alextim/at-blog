@@ -14,7 +14,7 @@ It's a GitHub hosted NPM package for Gatsby.
 
 ## Configuration
 
-- Install `@alextim/at-site-core` package.
+- Install `@alextim/at-site-core`, `@alextim/slugify` and `@alextim/translit` packages.
 
 - Add to `gatsby-config.js`:
 
