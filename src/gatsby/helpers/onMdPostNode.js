@@ -6,12 +6,14 @@ const { extractData } = require('@alextim/at-site-core');
 const compString = require('./compString');
 
 module.exports = ({ node, actions, getNode, createNodeId, createContentDigest }, options) => {
-  const { categoryPath, tagsPath, i18n } = options;
+  const { categoryPath, tagsPath, i18n, defaultTranslitLocale, supportedLocales } = options;
 
   const result = extractData({ node, getNode }, i18n);
   if (!result) {
     return;
   }
+  
+  const getTranslitLocale = (x) => supportedLocales.some((locale) => locale === x) ? x : defaultTranslitLocale;
 
   const a2oa = (a, prefix, locale) => {
     if (!a) {
@@ -19,7 +21,7 @@ module.exports = ({ node, actions, getNode, createNodeId, createContentDigest },
     }
     return [...new Set(a)].sort(compString).map((title) => ({
       title,
-      to: i18n.localizePath(`${prefix}${slugify(translit(title, locale))}/`, locale),
+      to: i18n.localizePath(`${prefix}${slugify(translit(title, getTranslitLocale(locale)))}/`, locale),
     }));
   };
 

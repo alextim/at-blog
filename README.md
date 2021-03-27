@@ -36,6 +36,7 @@ It's a GitHub hosted NPM package for Gatsby.
       {
         resolve: '@alextim/at-blog',
         options: {
+          // defaultTranslitLocale: 'uk', // 'ru' or 'uk'
           // cardsPerPage: 12,
           // blogPath: '/blog/',
           // categoryPath: '/category/',
