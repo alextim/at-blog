@@ -25,6 +25,7 @@ module.exports = ({ actions }) => {
       excerpt(pruneLength: Int = 180): String!
       timeToRead: Int
 
+      type: String!
       locale: String!
       slug: String!
       year: Int
@@ -39,7 +40,7 @@ module.exports = ({ actions }) => {
 
       category: [Link]
       tags: [Link]
-      
+
       featured: Boolean
       datePublished: Date
       dateModified: Date,
@@ -52,6 +53,7 @@ module.exports = ({ actions }) => {
       excerpt(pruneLength: Int = 180): String! @mdpassthrough(fieldName: "excerpt")
       timeToRead: Int @mdpassthrough(fieldName: "timeToRead")
 
+      type: String!
       locale: String!
       slug: String!
       year: Int

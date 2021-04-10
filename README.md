@@ -42,8 +42,9 @@ It's a GitHub hosted NPM package for Gatsby.
           // categoryPath: '/category/',
           // tagsPath: '/tags/',
           // yearsPath: '/years/',
-          // postsDir: 'blog/posts',
-          // pagesDir: 'blog/pages',
+          // postDirs: { 
+          //   post: 'blog/posts' 
+          // },
           templatesDir: `${__dirname}/src/templates/blog/`,
           // CREATE_TAG_PAGES: false,
           // CREATE_CATEGORY_PAGES: false,

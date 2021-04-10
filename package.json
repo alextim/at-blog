@@ -1,7 +1,7 @@
 {
-  "name": "@alextim/at-blog",
+  "name": "at-blog",
   "description": "Markdown blog",
-  "version": "0.1.2",
+  "version": "0.2.2",
   "license": "MIT",
   "author": "Oleksii Tymoshenko <buildmnt@gmail.com>",
   "keywords": [
@@ -23,12 +23,16 @@
     "jest": "^26.6.3"
   },
   "peerDependencies": {
-    "@alextim/at-site-core": ">=0.1.1",
+    "@alextim/at-site-core": ">=0.1.2",
     "@alextim/slugify": ">=0.1.0",
     "@alextim/translit": ">=0.1.1",
-    "gatsby": ">=3.1.2"
+    "gatsby": ">=3.2.1"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
+  },
+  "comments": {
+    "name": "@alextim/at-blog",
+    "version": "0.1.2"
   }
 }
