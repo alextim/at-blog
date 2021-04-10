@@ -1,5 +1,5 @@
 {
-  "name": "at-blog",
+  "name": "@alextim/at-blog",
   "description": "Markdown blog",
   "version": "0.2.2",
   "license": "MIT",
@@ -30,9 +30,5 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
-  },
-  "comments": {
-    "name": "@alextim/at-blog",
-    "version": "0.1.2"
   }
 }
