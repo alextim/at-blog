@@ -74,7 +74,7 @@ It's a GitHub hosted NPM package for Gatsby.
 | CREATE_CATEGORY_PAGES | false                  |
 | CREATE_YEAR_PAGES     | false                  |
 | i18n                  | REQUIRED: object       |
-| noIndex               | true                   | if true it forces `noindex` field to true
+| noIndex               | false                  | if true it forces `noindex` field to true
 
 ## Troubleshooting
 
