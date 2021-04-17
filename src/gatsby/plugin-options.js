@@ -12,19 +12,19 @@ const getTranslitLocale = (x) => {
   return x;
 };
 
-module.exports = (o) => ({
-  defaultTranslitLocale: getTranslitLocale(o.defaultTranslitLocale),
+module.exports = (pluginOptions) => ({
+  defaultTranslitLocale: getTranslitLocale(pluginOptions.defaultTranslitLocale),
   supportedTranslitLocales,
-  cardsPerPage: o.cardsPerPage || 12,
-  blogPath: o.blogPath || '/blog/',
-  categoryPath: o.categoryPath || '/category/',
-  tagsPath: o.tagsPath || '/tags/',
-  yearsPath: o.yearsPath || '/years/',
-  postDirs: o.postDirs || { post: 'blog/posts' },
-  templatesDir: o.templatesDir,
-  CREATE_TAG_PAGES: !!o.CREATE_TAG_PAGES,
-  CREATE_CATEGORY_PAGES: !!o.CREATE_CATEGORY_PAGES,
-  CREATE_YEAR_PAGES: !!o.CREATE_YEAR_PAGES,
-  i18n: o.i18n,
+  cardsPerPage: pluginOptions.cardsPerPage || 12,
+  blogPath: pluginOptions.blogPath || '/blog/',
+  categoryPath: pluginOptions.categoryPath || '/category/',
+  tagsPath: pluginOptions.tagsPath || '/tags/',
+  yearsPath: pluginOptions.yearsPath || '/years/',
+  postDirs: pluginOptions.postDirs || { post: 'blog/posts' },
+  templatesDir: pluginOptions.templatesDir,
+  CREATE_TAG_PAGES: !!pluginOptions.CREATE_TAG_PAGES,
+  CREATE_CATEGORY_PAGES: !!pluginOptions.CREATE_CATEGORY_PAGES,
+  CREATE_YEAR_PAGES: !!pluginOptions.CREATE_YEAR_PAGES,
+  i18n: pluginOptions.i18n,
   noIndex: sanitizeTrue(pluginOptions.noIndex),  
 });
