@@ -7,14 +7,14 @@ const getTranslitLocale = (x) => {
     return 'uk';
   }
   if (!supportedTranslitLocales.some((locale) => locale === x)) {
-    throw new Error(`AT-BLOG config: Unsupported locale ${x}`);
+    throw new Error(`AT-BLOG config: Unsupported Translit locale ${x}`);
   }
   return x;
 };
 
 module.exports = (o) => ({
   defaultTranslitLocale: getTranslitLocale(o.defaultTranslitLocale),
-  supportedLocales,
+  supportedTranslitLocales,
   cardsPerPage: o.cardsPerPage || 12,
   blogPath: o.blogPath || '/blog/',
   categoryPath: o.categoryPath || '/category/',
