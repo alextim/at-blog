@@ -50,12 +50,31 @@ It's a GitHub hosted NPM package for Gatsby.
           // CREATE_CATEGORY_PAGES: false,
           // CREATE_YEAR_PAGES: false,
           i18n,
+          // noIndex: false
         },
       },
       ...
     ],
   };
   ```
+
+## Plugin options
+
+| Name                  | Default value          | Note
+|---                    |---                     | ---
+| defaultTranslitLocale | `uk`                   | `ru` or `uk`
+| cardsPerPage          | 12                     |
+| blogPath              | `/blog/`               |
+| categoryPath          | `/category/`           |
+| tagsPath              | `/tags/`               |
+| yearsPath             | `/years/`              |
+| postDirs              | { post: 'blog/posts' } |
+| templatesDir          | REQUIRED: string       |
+| CREATE_TAG_PAGES      | false                  |
+| CREATE_CATEGORY_PAGES | false                  |
+| CREATE_YEAR_PAGES     | false                  |
+| i18n                  | REQUIRED: object       |
+| noIndex               | false                  | if true force `noindex` field to true
 
 ## Troubleshooting
 

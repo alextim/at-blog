@@ -1,9 +1,9 @@
-const supportedLocales = ['uk', 'ru'];
+const supportedTranslitLocales = ['uk', 'ru'];
 const getTranslitLocale = (x) => {
   if (!x) {
     return 'uk';
   }
-  if (!supportedLocales.some((locale) => locale === x)) {
+  if (!supportedTranslitLocales.some((locale) => locale === x)) {
     throw new Error(`AT-BLOG config: Unsupported locale ${x}`);
   }
   return x;
@@ -23,4 +23,5 @@ module.exports = (o) => ({
   CREATE_CATEGORY_PAGES: !!o.CREATE_CATEGORY_PAGES,
   CREATE_YEAR_PAGES: !!o.CREATE_YEAR_PAGES,
   i18n: o.i18n,
+  noIndex: !!pluginOptions.noIndex,  
 });
