@@ -1,3 +1,6 @@
+const sanitize = (x, defaultValue) => (x === undefined ? defaultValue : x);
+const sanitizeTrue = (x) => !!sanitize(x, true);
+
 const supportedTranslitLocales = ['uk', 'ru'];
 const getTranslitLocale = (x) => {
   if (!x) {
@@ -23,5 +26,5 @@ module.exports = (o) => ({
   CREATE_CATEGORY_PAGES: !!o.CREATE_CATEGORY_PAGES,
   CREATE_YEAR_PAGES: !!o.CREATE_YEAR_PAGES,
   i18n: o.i18n,
-  noIndex: !!pluginOptions.noIndex,  
+  noIndex: sanitizeTrue(pluginOptions.noIndex),  
 });
