@@ -1,5 +1,6 @@
 {
   "name": "@alextim/csp",
+  "private": true,
   "description": "generate CSP string for Google Analytics, Google Ads & Tags, iframed Google Maps and Youtube",
   "version": "0.1.2",
   "license": "MIT",
@@ -16,10 +17,10 @@
     "type": "git",
     "url": "https://github.com/alextim/at-blog.git",
     "directory": "packages/csp"
-  },  
+  },
   "bugs": {
     "url": "https://github.com/alextim/at-blog/issues"
-  },  
+  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   }

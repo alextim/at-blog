@@ -16,6 +16,7 @@ It generates:
    ```
 
 2. Install `@alextim/at-site-core`, `@alextim/slugify`, `@alextim/translit` and `@alextim/i18n-utils`packages.
+
 ## Configuration
 
 - Add to `gatsby-config.js`:
@@ -35,15 +36,15 @@ It generates:
           // categoryPath: '/category/',
           // tagsPath: '/tags/',
           // yearsPath: '/years/',
-          // postDirs: { 
-          //   post: { folder: 'blog/posts' }, 
+          // postDirs: {
+          //   post: { folder: 'blog/posts' },
           // },
           // authorDirs: {
           //   author: { folder: 'blog/authors', prefix: 'authors' },
-          // },          
+          // },
           // CREATE_TAG_PAGES: false,
           // CREATE_CATEGORY_PAGES: false,
-          // CREATE_YEAR_PAGES: false,            
+          // CREATE_YEAR_PAGES: false,
           locales: i18n.locales,         // Object
           defaultLang: i18n.defaultLang, // string
           // noIndex: false
@@ -53,35 +54,36 @@ It generates:
     ],
   };
   ```
+
 ## Plugin options
 
-| Name                  | Default value          | Note
-|---                    |---                     | ---
-| pageDirs              | { page: { folder: 'pages' } } |
-|                       |                        |
-| defaultTranslitLocale | `uk`                   | `ru` or `uk`
-| cardsPerPage          | 12                     |
-| blogPath              | `/blog/`               |
-| categoryPath          | `/category/`           |
-| tagsPath              | `/tags/`               |
-| yearsPath             | `/years/`              |
-| postDirs              | { post: { folder: 'blog/posts' } } |
+| Name                  | Default value                                             | Note                                  |
+| --------------------- | --------------------------------------------------------- | ------------------------------------- |
+| pageDirs              | { page: { folder: 'pages' } }                             |
+|                       |                                                           |
+| defaultTranslitLocale | `uk`                                                      | `ru` or `uk`                          |
+| cardsPerPage          | 12                                                        |
+| blogPath              | `/blog/`                                                  |
+| categoryPath          | `/category/`                                              |
+| tagsPath              | `/tags/`                                                  |
+| yearsPath             | `/years/`                                                 |
+| postDirs              | { post: { folder: 'blog/posts' } }                        |
 | authorDirs            | { author: { folder: 'blog/authors', prefix: 'authors' } } |
-| templatesDir          | REQUIRED: string       |
-| CREATE_TAG_PAGES      | false                  |
-| CREATE_CATEGORY_PAGES | false                  |
-| CREATE_YEAR_PAGES     | false                  |
-|                       |                        |
-| locales        | REQUIRED: object              |
-| defaultLang    | REQUIRED: string              |
-| noIndex        | false                         | if true force `noindex` field to true
+| templatesDir          | REQUIRED: string                                          |
+| CREATE_TAG_PAGES      | false                                                     |
+| CREATE_CATEGORY_PAGES | false                                                     |
+| CREATE_YEAR_PAGES     | false                                                     |
+|                       |                                                           |
+| locales               | REQUIRED: object                                          |
+| defaultLang           | REQUIRED: string                                          |
+| noIndex               | false                                                     | if true force `noindex` field to true |
 
 ## Troubleshooting
 
 In case of error:
 
 ```text
-Integrity checked failed 
+Integrity checked failed
 ```
 
 Use `yarn add @alextim/at-blog --upgrade-checksums` instead to solve the issue.

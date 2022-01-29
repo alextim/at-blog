@@ -1,5 +1,6 @@
 {
   "name": "@alextim/translit",
+  "private": true,
   "description": "translit",
   "version": "0.1.1",
   "license": "MIT",

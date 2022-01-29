@@ -47,6 +47,8 @@ module.exports = {
     'no-unused-vars': 'error',
     'import/no-named-as-default': 0,
     'prettier/prettier': 'error',
+    'react/function-component-definition': 0,
+    'react/prop-types': 0,
     'jest/prefer-expect-assertions': [
       'warn',
       {

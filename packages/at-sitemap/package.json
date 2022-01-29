@@ -1,5 +1,6 @@
 {
   "name": "@alextim/at-sitemap",
+  "private": true,
   "description": "Replacement for gatsby-plugin-sitemap. Serves: pages and posts with state non 'draft' and related images",
   "version": "0.4.0",
   "license": "MIT",

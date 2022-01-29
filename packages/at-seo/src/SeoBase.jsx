@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable import/no-unresolved */
 import { Helmet } from 'react-helmet';
 
 import getWebSiteSchema from './getWebSiteSchema';
@@ -86,11 +86,10 @@ const SeoBase = ({
       })) || []),
   ];
   if (keywords) {
-    meta.push(
-      {
-        name: 'keywords',
-        content: keywords,
-      });
+    meta.push({
+      name: 'keywords',
+      content: keywords,
+    });
   }
 
   const og = [
@@ -303,14 +302,16 @@ const SeoBase = ({
         config,
         homeURL,
         socialLinks,
-    }));
+      }),
+    );
   }
   if (!config.noBreadcrumbs && !isRoot && breadcrumbs && breadcrumbs.length) {
     scriptSrc.push(
       getBreadcrumbsSchema({
         breadcrumbs,
         siteUrl: config.siteUrl,
-    }));    
+      }),
+    );
   }
   const scripts = scriptSrc.map((el) => ({
     type: 'application/ld+json',

@@ -1,5 +1,6 @@
 {
   "name": "@alextim/at-site-core",
+  "private": true,
   "description": "Markdown site core: pages, nav bar menu, footer menu, social links, address, translations",
   "version": "0.8.13",
   "license": "MIT",
@@ -14,10 +15,10 @@
     "type": "git",
     "url": "https://github.com/alextim/at-blog.git",
     "directory": "packages/at-site-core"
-  },  
+  },
   "bugs": {
     "url": "https://github.com/alextim/at-blog/issues"
-  },  
+  },
   "scripts": {
     "test": "jest"
   },

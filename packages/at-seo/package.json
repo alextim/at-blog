@@ -1,5 +1,6 @@
 {
   "name": "@alextim/at-seo",
+  "private": true,
   "description": "SeoBase & Structured data",
   "version": "0.4.5",
   "license": "MIT",
@@ -15,13 +16,13 @@
   "unpkg": "dist/index.umd.js",
   "engines": {
     "node": ">=10"
-  },  
+  },
   "homepage": "https://github.com/alextim/at-blog/tree/master/packages/at-seo#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/alextim/at-blog.git",
     "directory": "packages/at-seo"
-  },  
+  },
   "bugs": {
     "url": "https://github.com/alextim/at-blog/issues"
   },
@@ -37,7 +38,7 @@
   "devDependencies": {
     "microbundle-crl": "^0.13.11",
     "react": "^17.0.2"
-  },  
+  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   }

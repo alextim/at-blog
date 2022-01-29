@@ -12,17 +12,17 @@ During build it generates
 
 ## Plugin options
 
-| Name                   | Default value                          |   Notes   |
-| ---                    | ---                                    | ---
+| Name                   | Default value                          | Notes                                                                       |
+| ---------------------- | -------------------------------------- | --------------------------------------------------------------------------- |
 | createRobotsTxt        | true                                   |
-| noIndex                | false                                  | true  - `Disallow: /`
-|                        |                                        | false - `Disallow:`
+| noIndex                | false                                  | true - `Disallow: /`                                                        |
+|                        |                                        | false - `Disallow:`                                                         |
 | excludePaths           | ['/dev-404-page', '/404', '/404.html'] |
 | sitemapFileName        | `sitemap.xml`                          |
 | buildDir               | `./public`                             |
-| lastmod                | 1                                      | 0 - no, 1 - build date, 2 - dateModified
-| lastmodDateOnly        | false                                  | [sitemap.js API](https://github.com/ekalinin/sitemap.js/blob/master/api.md)
+| lastmod                | 1                                      | 0 - no, 1 - build date, 2 - dateModified                                    |
+| lastmodDateOnly        | false                                  | [sitemap.js API](https://github.com/ekalinin/sitemap.js/blob/master/api.md) |
 | includeImages          | true                                   |
 | ignoreImagesWithoutAlt | true                                   |
 | createLinkInHead       | true                                   |
-| specialFolder          | `assets`                               | looks for images here
+| specialFolder          | `assets`                               | looks for images here                                                       |
