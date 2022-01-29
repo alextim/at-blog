@@ -57,17 +57,17 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Create Release Pull Request or Publish to npm
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          # This expects you to have a script called release which does a build for your packages and calls changeset publish
-          publish: yarn release
-          commit: '[ci] release'
-          title: '[ci] release'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      #- name: Create Release Pull Request or Publish to npm
+      #  id: changesets
+      #  uses: changesets/action@v1
+      #  with:
+      #    # This expects you to have a script called release which does a build for your packages and calls changeset publish
+      #    publish: yarn release
+      #    commit: '[ci] release'
+      #    title: '[ci] release'
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #    NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       #- name: Generate Notification
       #  id: notification
@@ -77,6 +77,14 @@ jobs:
         run: |
           yarn changeset version --snapshot
           yarn changeset publish --tag canary
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Post published version to GitHub checks
+        run: |
+          name=$(jq -r .name package.json)
+          version=$(jq -r .version package.json)
+          npx action-status --context=$name --state=success --description=$version --url="https://unpkg.com/$name@$version/"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
