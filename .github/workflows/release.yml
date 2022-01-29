@@ -90,8 +90,9 @@ jobs:
         run: |
           # lerna version --conventional-commits --conventional-graduate --yes
 
+          lerna publish from-git --yes
           # lerna publish from-git --yes --no-verify-access --force-publish
-          yarn lerna publish from-package --yes
+          # yarn lerna publish from-package --yes
 
       - name: Send a Slack notification if a publish happens
         if: steps.changesets.outputs.published == 'true'
