@@ -25,6 +25,7 @@ const formatUrl = (url) => {
   if (url === '/') {
     return url;
   }
+
   const urlParts = url.split('/');
   let result = '';
   for (let i = 0; i < urlParts.length; i++) {
