@@ -1,7 +1,7 @@
 {
   "name": "@alextim/csp",
   "description": "generate CSP string for Google Analytics, Google Ads & Tags, iframed Google Maps and Youtube",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "author": "Oleksii Tymoshenko <buildmnt@gmail.com>",
   "keywords": [

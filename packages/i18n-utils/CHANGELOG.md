@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3](https://github.com/alextim/at-blog/compare/@alextim/i18n-utils@0.1.2...@alextim/i18n-utils@0.1.3) (2022-01-29)
+
+**Note:** Version bump only for package @alextim/i18n-utils
+
 ## 0.1.2 (2022-01-29)
 
 **Note:** Version bump only for package @alextim/i18n-utils
