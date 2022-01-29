@@ -1,6 +1,5 @@
 {
   "name": "@alextim/i18n-utils",
-  "private": true,
   "description": "i18n utils",
   "version": "0.1.2",
   "license": "MIT",

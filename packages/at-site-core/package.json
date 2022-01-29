@@ -1,6 +1,5 @@
 {
   "name": "@alextim/at-site-core",
-  "private": true,
   "description": "Markdown site core: pages, nav bar menu, footer menu, social links, address, translations",
   "version": "0.8.15",
   "license": "MIT",

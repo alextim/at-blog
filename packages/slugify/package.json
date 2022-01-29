@@ -1,6 +1,5 @@
 {
   "name": "@alextim/slugify",
-  "private": true,
   "description": "slugify",
   "version": "0.1.2",
   "license": "MIT",
