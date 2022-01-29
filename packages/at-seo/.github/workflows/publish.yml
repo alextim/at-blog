@@ -1,0 +1,92 @@
+# https://github.com/marketplace/actions/github-releases-for-automated-package-publishing
+name: Node.js Package
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+      - run: yarn install
+      - run: yarn build        
+      - uses: actions/upload-artifact@main
+        with:
+          name: package artifacts
+          path: dist/
+
+  test:
+    needs: build    
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+      - uses: actions/download-artifact@main
+        with:
+          name: package artifacts
+          path: dist
+      - name: yarn install, and test
+        run: |
+          yarn install
+          yarn test
+        env:
+          CI: true
+
+  publish-gpr:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the exact commit tagged on the release.
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+            ref: ${{ github.event.release.target_commitish }} 
+
+      # This is the action in this repo! 👇
+      # Note we set an `id` called `release`. We'll use that later...
+      - name: Validate and extract release information
+        id: release
+        uses: manovotny/github-releases-for-automated-package-publishing-action@v1.0.0                   
+      
+      - name: Set node version
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+          registry-url: https://npm.pkg.github.com/
+          scope: '@alextim'
+      
+      - uses: actions/download-artifact@main
+        with:
+          name: package artifacts
+          path: dist
+
+      #- run: yarn install
+      #- run: yarn build
+      - run: git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com" && git config --global user.name "$GITHUB_ACTOR"
+      
+      # This will publish a "pre-release" or "tagged" version of a package.
+      - name: Publish tagged version
+        if: steps.release.outputs.tag != ''
+        run: yarn publish --new-version ${{ steps.release.outputs.version }} --tag ${{ steps.release.outputs.tag }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # This will publish a version of a package.
+      - name: Publish version
+        if: steps.release.outputs.tag == ''
+        run: yarn publish --new-version ${{ steps.release.outputs.version }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
+      
+      #- run: yarn version --minor
+      #- run: git push --tags && git push
+      #- run: yarn publish
+      #  env:
+      #    NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

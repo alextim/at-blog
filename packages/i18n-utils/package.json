@@ -1,0 +1,26 @@
+{
+  "name": "@alextim/i18n-utils",
+  "description": "i18n utils",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "Oleksii Tymoshenko <buildmnt@gmail.com>",
+  "keywords": [
+    "js"
+  ],
+  "main": "index.js",
+  "homepage": "https://github.com/alextim/at-blog/tree/master/packages/i18n-utils#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alextim/at-blog.git",
+    "directory": "packages/i18n-utils"
+  },  
+  "bugs": {
+    "url": "https://github.com/alextim/at-blog/issues"
+  },  
+  "scripts": {
+    "test": "echo \"Write tests!\" && exit 0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}

@@ -1,0 +1,13 @@
+.git
+.cache
+.husky
+.netlify
+.next
+.tmp
+.vscode
+build
+node_modules
+public
+package.json
+package-lock.json
+yarn.lock

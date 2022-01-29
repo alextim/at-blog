@@ -1,0 +1,28 @@
+{
+  "name": "@alextim/translit",
+  "description": "translit",
+  "version": "0.1.1",
+  "license": "MIT",
+  "author": "Oleksii Tymoshenko <buildmnt@gmail.com>",
+  "keywords": [
+    "js"
+  ],
+  "main": "index.js",
+  "homepage": "https://github.com/alextim/at-blog/tree/master/packages/translit#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alextim/at-blog.git",
+    "directory": "packages/translit"
+  },
+  "bugs": {
+    "url": "https://github.com/alextim/at-blog/issues"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "devDependencies": {
+  }
+}

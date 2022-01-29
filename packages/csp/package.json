@@ -1,0 +1,26 @@
+{
+  "name": "@alextim/csp",
+  "description": "generate CSP string for Google Analytics, Google Ads & Tags, iframed Google Maps and Youtube",
+  "version": "0.1.2",
+  "license": "MIT",
+  "author": "Oleksii Tymoshenko <buildmnt@gmail.com>",
+  "keywords": [
+    "js"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Write tests!\" && exit 0"
+  },
+  "homepage": "https://github.com/alextim/at-blog/tree/master/packages/csp#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alextim/at-blog.git",
+    "directory": "packages/csp"
+  },  
+  "bugs": {
+    "url": "https://github.com/alextim/at-blog/issues"
+  },  
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}

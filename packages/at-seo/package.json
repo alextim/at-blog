@@ -1,0 +1,44 @@
+{
+  "name": "@alextim/at-seo",
+  "description": "SeoBase & Structured data",
+  "version": "0.4.5",
+  "license": "MIT",
+  "author": "Oleksii Tymoshenko <buildmnt@gmail.com>",
+  "keywords": [
+    "js",
+    "react",
+    "seo"
+  ],
+  "source": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "unpkg": "dist/index.umd.js",
+  "engines": {
+    "node": ">=10"
+  },  
+  "homepage": "https://github.com/alextim/at-blog/tree/master/packages/at-seo#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alextim/at-blog.git",
+    "directory": "packages/at-seo"
+  },  
+  "bugs": {
+    "url": "https://github.com/alextim/at-blog/issues"
+  },
+  "scripts": {
+    "build": "microbundle-crl --no-compress --format modern,cjs",
+    "test": "echo \"Write tests!\" && exit 0"
+  },
+  "peerDependencies": {
+    "@alextim/utils": ">=0.1.0",
+    "react": ">=17.0.2",
+    "react-helmet": ">=6.1.0"
+  },
+  "devDependencies": {
+    "microbundle-crl": "^0.13.11",
+    "react": "^17.0.2"
+  },  
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}
