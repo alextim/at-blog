@@ -2,7 +2,7 @@
   "name": "@alextim/at-sitemap",
   "private": true,
   "description": "Replacement for gatsby-plugin-sitemap. Serves: pages and posts with state non 'draft' and related images",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "license": "MIT",
   "author": "Oleksii Tymoshenko <buildmnt@gmail.com>",
   "keywords": [
@@ -22,7 +22,6 @@
   "dependencies": {
     "sitemap": "^7.0.0"
   },
-  "devDependencies": {},
   "peerDependencies": {
     "gatsby": ">=4.4.5",
     "react": ">=17.0.2"

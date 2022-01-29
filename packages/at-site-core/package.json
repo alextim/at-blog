@@ -2,7 +2,7 @@
   "name": "@alextim/at-site-core",
   "private": true,
   "description": "Markdown site core: pages, nav bar menu, footer menu, social links, address, translations",
-  "version": "0.8.14",
+  "version": "0.8.15",
   "license": "MIT",
   "author": "Oleksii Tymoshenko <buildmnt@gmail.com>",
   "keywords": [
@@ -22,8 +22,6 @@
   "scripts": {
     "test": "jest"
   },
-  "dependencies": {},
-  "devDependencies": {},
   "peerDependencies": {
     "@alextim/i18n-utils": ">=0.1.1",
     "@alextim/slugify": ">=0.1.1",

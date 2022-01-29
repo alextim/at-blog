@@ -1,3 +1,12 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 0.4.7 (2022-01-29)
+
+**Note:** Version bump only for package @alextim/at-seo
+
 # @alextim/at-seo
 
 ## 0.4.6
