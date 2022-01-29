@@ -2,7 +2,7 @@
   "name": "@alextim/translit",
   "private": true,
   "description": "translit",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "author": "Oleksii Tymoshenko <buildmnt@gmail.com>",
   "keywords": [
@@ -24,8 +24,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "peerDependencies": {
     "gatsby": ">=4.4.5"
   }
