@@ -81,6 +81,7 @@ const isMobile = () => (isSSR() ? undefined : /Android|webOS|iPhone|iPad|iPod|Bl
       return check;
     },
 */
+
 const phoneUrl = (phone) => `tel:${phone.length > 10 ? `+${phone}` : phone}`;
 const whatsappUrl = (whatsapp) => `https://wa.me/${whatsapp}`;
 const telegramUrl = (telegram) => `tg://resolve?domain=${telegram}`;
