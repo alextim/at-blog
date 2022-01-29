@@ -62,12 +62,12 @@ jobs:
       #  env:
       #    NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Release snapshot
-        run: |
-          yarn changeset version --snapshot
-          yarn changeset publish --tag canary
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #- name: Release snapshot
+      #  run: |
+      #    yarn changeset version --snapshot
+      #    yarn changeset publish --tag canary
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish
         run: |
