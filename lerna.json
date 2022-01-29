@@ -11,5 +11,6 @@
       "allowBranch": "main",
       "yes": true
     }
-  }
+  },
+  "ignoreChanges": ["CHANGELOG.md", "**/__tests__/**", "**/__mocks__/**", "**/__testfixtures__/**"]
 }
