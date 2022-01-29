@@ -6,9 +6,15 @@ on:
     branches:
       - main
 
+# Automatically cancel in-progress actions on the same branch
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request_target' && github.head_ref || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   release:
     name: Release
+    if: ${{ github.ref_name == 'main' && github.repository_owner == 'alextim' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -16,15 +22,31 @@ jobs:
         with:
           # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Setup Node.js 16
+      - name: Setup Node
         uses: actions/setup-node@v2
         with:
           node-version: 16
           cache: 'yarn'
+          registry-url: https://npm.pkg.github.com/
+          scope: '@alextim'
 
-      - name: Install Dependencies
-        run: yarn
+      - name: Cache Node Modules
+        id: cache-node
+        uses: actions/cache@v2
+        with:
+          path: "**/node_modules"
+          key: cache-node_modules-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-${{ github.run_id }}
+          restore-keys: |
+            cache-node_modules-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-${{ github.run_id }}
+            cache-node_modules-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-
+
+      - name: Install NPM Dependencies
+        run: yarn install --prefer-offline --frozen-lockfile --ignore-engines --registry https://registry.npmjs.org --network-timeout 300000
+        env:
+          CI: true
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
@@ -32,9 +54,16 @@ jobs:
         with:
           # This expects you to have a script called release which does a build for your packages and calls changeset publish
           publish: yarn release
+          commit: '[ci] release'
+          title: '[ci] release'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      #- name: Generate Notification
+      #  id: notification
+      #  if: steps.changesets.outputs.published == 'true'
+      #  run: message=$(node scripts/notify/index.js '${{ steps.changesets.outputs.publishedPackages }}') && echo ::set-output name=message::${message//$'\n'/'%0A'}
 
       - name: Send a Slack notification if a publish happens
         if: steps.changesets.outputs.published == 'true'
