@@ -9,3 +9,43 @@ updates:
     directory: "/"
     schedule:
       interval: daily
+
+  - package-ecosystem: npm
+    directory: "/packages/at-seo"
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: "/packages/at-site-core"
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: "/packages/at-sitemap"
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: "/packages/csp"
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: "/packages/i18n-utils"
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: "/packages/slugify"
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: "/packages/traslit"
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: "/packages/utils"
+    schedule:
+      interval: daily

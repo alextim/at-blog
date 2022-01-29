@@ -25,10 +25,7 @@ const getPageSchema = ({
   publisher,
   author,
 }) => {
-  const type =
-    !pageType || !['Article', 'BlogPosting', 'Blog'].some((t) => pageType === t)
-      ? 'WebPage'
-      : pageType;
+  const type = !pageType || !['Article', 'BlogPosting', 'Blog'].some((t) => pageType === t) ? 'WebPage' : pageType;
   const isArticle = pageType === 'Article' || pageType === 'BlogPosting';
 
   const o = {

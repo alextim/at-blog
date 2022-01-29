@@ -1,75 +1,75 @@
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+function _interopDefault(ex) {
+  return ex && typeof ex === 'object' && 'default' in ex ? ex.default : ex;
+}
 
-var React = _interopDefault(require('react'));
-var reactHelmet = require('react-helmet');
-var utils = _interopDefault(require('@alextim/utils'));
+const React = _interopDefault(require('react'));
+const reactHelmet = require('react-helmet');
+const utils = _interopDefault(require('@alextim/utils'));
 
 function _extends() {
-  _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
+  _extends =
+    Object.assign ||
+    function (target) {
+      for (let i = 1; i < arguments.length; i++) {
+        const source = arguments[i];
 
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
+        for (const key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
         }
       }
-    }
 
-    return target;
-  };
+      return target;
+    };
 
   return _extends.apply(this, arguments);
 }
 
-var getWebSiteSchema = function getWebSiteSchema(_ref) {
-  var siteUrl = _ref.siteUrl,
-      siteTitle = _ref.siteTitle,
-      siteDescription = _ref.siteDescription,
-      htmlLang = _ref.htmlLang;
+const getWebSiteSchema = function getWebSiteSchema(_ref) {
+  const { siteUrl } = _ref;
+  const { siteTitle } = _ref;
+  const { siteDescription } = _ref;
+  const { htmlLang } = _ref;
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    '@id': siteUrl + "/#WebSite",
+    '@id': `${siteUrl}/#WebSite`,
     url: siteUrl,
     name: siteTitle,
     description: siteDescription,
-    inLanguage: htmlLang
+    inLanguage: htmlLang,
   };
 };
 
-var getAuthor = function getAuthor(a) {
+const getAuthor = function getAuthor(a) {
   if (!a || !a.length) {
     return false;
   }
 
-  return a.map(function (name) {
-    return {
-      '@type': 'Person',
-      name: name
-    };
-  });
+  return a.map((name) => ({
+    '@type': 'Person',
+    name,
+  }));
 };
 
-var getPageSchema = function getPageSchema(_ref) {
-  var organizationName = _ref.organizationName,
-      siteUrl = _ref.siteUrl,
-      siteLogo = _ref.siteLogo,
-      URL = _ref.URL,
-      title = _ref.title,
-      headline = _ref.headline,
-      htmlLang = _ref.htmlLang,
-      imgURL = _ref.imgURL,
-      datePublished = _ref.datePublished,
-      dateModified = _ref.dateModified,
-      pageType = _ref.pageType,
-      publisher = _ref.publisher,
-      author = _ref.author;
-  var type = !pageType || !['Article', 'BlogPosting', 'Blog'].some(function (t) {
-    return pageType === t;
-  }) ? 'WebPage' : pageType;
-  var isArticle = pageType === 'Article' || pageType === 'BlogPosting';
-  var o = {
+const getPageSchema = function getPageSchema(_ref) {
+  const { organizationName } = _ref;
+  const { siteUrl } = _ref;
+  const { siteLogo } = _ref;
+  const { URL } = _ref;
+  const { title } = _ref;
+  const { headline } = _ref;
+  const { htmlLang } = _ref;
+  const { imgURL } = _ref;
+  const { datePublished } = _ref;
+  const { dateModified } = _ref;
+  const { pageType } = _ref;
+  const { publisher } = _ref;
+  const { author } = _ref;
+  const type = !pageType || !['Article', 'BlogPosting', 'Blog'].some((t) => pageType === t) ? 'WebPage' : pageType;
+  const isArticle = pageType === 'Article' || pageType === 'BlogPosting';
+  const o = {
     '@context': 'https://schema.org',
     '@type': type,
     name: title,
@@ -80,16 +80,16 @@ var getPageSchema = function getPageSchema(_ref) {
       url: siteUrl,
       logo: {
         '@type': 'ImageObject',
-        url: siteLogo
-      }
-    }
+        url: siteLogo,
+      },
+    },
   };
 
   if (isArticle) {
     o.author = getAuthor(author) || o.publisher;
     o.mainEntityOfPage = {
       '@type': 'WebPage',
-      '@id': URL
+      '@id': URL,
     };
     o.headline = headline;
 
@@ -112,32 +112,32 @@ var getPageSchema = function getPageSchema(_ref) {
   return o;
 };
 
-var weekDays = {
+const weekDays = {
   mo: 'Monday',
   tu: 'Tuesday',
   we: 'Wednesday',
   th: 'Thursday',
   fr: 'Friday',
   sa: 'Saturday',
-  su: 'Sunday'
+  su: 'Sunday',
 };
 
-var getOpeningHoursSpecification = function getOpeningHoursSpecification(openingHours) {
-  var parseDow = function parseDow(s) {
+const getOpeningHoursSpecification = function getOpeningHoursSpecification(openingHours) {
+  const parseDow = function parseDow(s) {
     if (!s) {
       return undefined;
     }
 
-    var dow = s.split('-');
+    let dow = s.split('-');
 
     if (dow.length > 1) {
-      var d1 = dow[0].trim();
-      var d2 = dow[1].trim();
-      var keys = Object.keys(weekDays);
-      var a = [];
-      var first = false;
-      var last = false;
-      keys.forEach(function (d) {
+      const d1 = dow[0].trim();
+      const d2 = dow[1].trim();
+      const keys = Object.keys(weekDays);
+      const a = [];
+      let first = false;
+      let last = false;
+      keys.forEach((d) => {
         if (d === d1) {
           first = true;
           a.push(weekDays[d]);
@@ -154,56 +154,54 @@ var getOpeningHoursSpecification = function getOpeningHoursSpecification(opening
     dow = s.split(',');
 
     if (dow.length > 1) {
-      return dow.map(function (d) {
-        return weekDays[d.trim()];
-      });
+      return dow.map((d) => weekDays[d.trim()]);
     }
 
     return weekDays[s.trim()];
   };
 
-  return openingHours.map(function (_ref) {
-    var dow = _ref[0],
-        timeStart = _ref[1],
-        timeFinish = _ref[2];
+  return openingHours.map((_ref) => {
+    const dow = _ref[0];
+    const timeStart = _ref[1];
+    const timeFinish = _ref[2];
     return {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: parseDow(dow),
       opens: timeStart,
-      closes: timeFinish
+      closes: timeFinish,
     };
   });
 };
 
-var getOrganizationSchema = function getOrganizationSchema(_ref2) {
-  var orgContacts = _ref2.orgContacts,
-      _ref2$orgAddress = _ref2.orgAddress,
-      orgAddress = _ref2$orgAddress === void 0 ? {} : _ref2$orgAddress,
-      config = _ref2.config,
-      socialLinks = _ref2.socialLinks;
-  var organizationType = orgContacts.organizationType,
-      geo = orgContacts.geo,
-      openingHours = orgContacts.openingHours,
-      organizationPhone = orgContacts.phone,
-      organizationEmail = orgContacts.email,
-      hasMap = orgContacts.hasMap,
-      priceRange = orgContacts.priceRange,
-      currenciesAccepted = orgContacts.currenciesAccepted,
-      paymentAccepted = orgContacts.paymentAccepted;
-  var organizationName = orgAddress.name,
-      legalName = orgAddress.legalName,
-      alternateName = orgAddress.alternateName,
-      description = orgAddress.description,
-      postalAddress = orgAddress.postalAddress,
-      contactPoint = orgAddress.contactPoint;
-  var schema = {
+const getOrganizationSchema = function getOrganizationSchema(_ref2) {
+  const { orgContacts } = _ref2;
+  const _ref2$orgAddress = _ref2.orgAddress;
+  const orgAddress = _ref2$orgAddress === void 0 ? {} : _ref2$orgAddress;
+  const { config } = _ref2;
+  const { socialLinks } = _ref2;
+  const { organizationType } = orgContacts;
+  const { geo } = orgContacts;
+  const { openingHours } = orgContacts;
+  const organizationPhone = orgContacts.phone;
+  const organizationEmail = orgContacts.email;
+  const { hasMap } = orgContacts;
+  const { priceRange } = orgContacts;
+  const { currenciesAccepted } = orgContacts;
+  const { paymentAccepted } = orgContacts;
+  const organizationName = orgAddress.name;
+  const { legalName } = orgAddress;
+  const { alternateName } = orgAddress;
+  const { description } = orgAddress;
+  const { postalAddress } = orgAddress;
+  const { contactPoint } = orgAddress;
+  const schema = {
     '@context': 'https://schema.org',
     '@type': organizationType,
-    '@id': config.siteUrl + "/#Organization",
+    '@id': `${config.siteUrl}/#Organization`,
     name: organizationName,
-    description: description,
+    description,
     url: config.siteUrl,
-    logo: config.siteLogo
+    logo: config.siteLogo,
   };
 
   if (config.siteBusinessPhoto) {
@@ -211,9 +209,7 @@ var getOrganizationSchema = function getOrganizationSchema(_ref2) {
   }
 
   if (postalAddress) {
-    var o = _extends({
-      '@type': 'PostalAddress'
-    }, postalAddress);
+    const o = { '@type': 'PostalAddress', ...postalAddress };
 
     if (postalAddress.streetAddress) {
       o.streetAddress = postalAddress.streetAddress.join(', ');
@@ -240,28 +236,24 @@ var getOrganizationSchema = function getOrganizationSchema(_ref2) {
   }
 
   if (geo) {
-    schema.geo = _extends({
-      '@type': 'GeoCoordinates'
-    }, geo);
+    schema.geo = { '@type': 'GeoCoordinates', ...geo };
   }
 
   if (contactPoint) {
-    schema.contactPoint = contactPoint.map(function (_ref3) {
-      var name = _ref3.name,
-          contactType = _ref3.contactType,
-          telephone = _ref3.telephone,
-          email = _ref3.email,
-          areaServed = _ref3.areaServed;
-      var o = {
+    schema.contactPoint = contactPoint.map((_ref3) => {
+      const { name } = _ref3;
+      const { contactType } = _ref3;
+      const { telephone } = _ref3;
+      const { email } = _ref3;
+      const { areaServed } = _ref3;
+      const o = {
         '@type': 'ContactPoint',
-        name: name,
-        contactType: contactType
+        name,
+        contactType,
       };
 
       if (telephone) {
-        o.telephone = telephone.reduce(function (acc, curr) {
-          return "" + acc + (acc ? ', ' : '') + utils.formatPhone(curr);
-        }, '');
+        o.telephone = telephone.reduce((acc, curr) => `${acc}${acc ? ', ' : ''}${utils.formatPhone(curr)}`, '');
       }
 
       if (email) {
@@ -277,9 +269,7 @@ var getOrganizationSchema = function getOrganizationSchema(_ref2) {
   }
 
   if (socialLinks) {
-    schema.sameAs = Object.keys(socialLinks).map(function (key) {
-      return socialLinks[key].to;
-    });
+    schema.sameAs = Object.keys(socialLinks).map((key) => socialLinks[key].to);
   }
 
   if (currenciesAccepted) {
@@ -305,165 +295,179 @@ var getOrganizationSchema = function getOrganizationSchema(_ref2) {
   return schema;
 };
 
-var getBreadcrumbsSchema = function getBreadcrumbsSchema(_ref) {
-  var breadcrumbs = _ref.breadcrumbs,
-      siteUrl = _ref.siteUrl;
+const getBreadcrumbsSchema = function getBreadcrumbsSchema(_ref) {
+  const { breadcrumbs } = _ref;
+  const { siteUrl } = _ref;
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    'itemListElement': breadcrumbs.map(function (_ref2, i) {
-      var to = _ref2.to,
-          name = _ref2.title;
+    itemListElement: breadcrumbs.map((_ref2, i) => {
+      const { to } = _ref2;
+      const name = _ref2.title;
       return {
         '@type': 'ListItem',
-        'position': i + 1,
-        name: name,
-        item: siteUrl + to
+        position: i + 1,
+        name,
+        item: siteUrl + to,
       };
-    })
+    }),
   };
 };
 
-var SeoBase = function SeoBase(_ref) {
-  var config = _ref.config,
-      siteMeta = _ref.siteMeta,
-      i18n = _ref.i18n,
-      orgContacts = _ref.orgContacts,
-      orgAddress = _ref.orgAddress,
-      socialLinks = _ref.socialLinks,
-      title = _ref.title,
-      keywords = _ref.keywords,
-      headline = _ref.headline,
-      description = _ref.description,
-      locale = _ref.locale,
-      pathname = _ref.pathname,
-      pageType = _ref.pageType,
-      imgPath = _ref.imgPath,
-      datePublished = _ref.datePublished,
-      dateModified = _ref.dateModified,
-      author = _ref.author,
-      breadcrumbs = _ref.breadcrumbs,
-      tags = _ref.tags,
-      canonical = _ref.canonical,
-      noindex = _ref.noindex,
-      metas = _ref.metas,
-      links = _ref.links;
-  var isRoot = pathname === '/';
-  var URL = "" + config.siteUrl + pathname;
-  var homeURL = i18n ? "" + config.siteUrl + i18n.localizePath('/', locale) : URL;
-  var imgURL;
+const SeoBase = function SeoBase(_ref) {
+  const { config } = _ref;
+  const { siteMeta } = _ref;
+  const { i18n } = _ref;
+  const { orgContacts } = _ref;
+  const { orgAddress } = _ref;
+  const { socialLinks } = _ref;
+  const { title } = _ref;
+  const { keywords } = _ref;
+  const { headline } = _ref;
+  const { description } = _ref;
+  const { locale } = _ref;
+  const { pathname } = _ref;
+  const { pageType } = _ref;
+  const { imgPath } = _ref;
+  const { datePublished } = _ref;
+  const { dateModified } = _ref;
+  const { author } = _ref;
+  const { breadcrumbs } = _ref;
+  const { tags } = _ref;
+  const { canonical } = _ref;
+  const { noindex } = _ref;
+  const { metas } = _ref;
+  const { links } = _ref;
+  const isRoot = pathname === '/';
+  const URL = `${config.siteUrl}${pathname}`;
+  const homeURL = i18n ? `${config.siteUrl}${i18n.localizePath('/', locale)}` : URL;
+  let imgURL;
 
   if (imgPath) {
-    imgURL = "" + config.siteUrl + imgPath;
+    imgURL = `${config.siteUrl}${imgPath}`;
   }
 
-  var purePath = i18n ? i18n.purePath(pathname) : pathname;
+  const purePath = i18n ? i18n.purePath(pathname) : pathname;
 
-  var ogImage = _extends({}, config.ogImage, {
-    src: "" + config.ogImage.src + locale + ".jpg"
-  });
+  const ogImage = { ...config.ogImage, src: `${config.ogImage.src}${locale}.jpg` };
 
-  var twitterImage = _extends({}, config.twitterImage, {
-    src: "" + config.twitterImage.src + locale + ".jpg"
-  });
+  const twitterImage = { ...config.twitterImage, src: `${config.twitterImage.src}${locale}.jpg` };
 
-  var htmlLang = siteMeta.htmlLang,
-      ogLocale = siteMeta.ogLocale,
-      siteTitle = siteMeta.siteTitle,
-      siteDescription = siteMeta.siteDescription;
-  var isArticle = pageType === 'Article' || pageType === 'BlogPosting';
-  var metaTitle = title || siteTitle;
-  var metaDescription = description || siteDescription;
-  var meta = [{
-    name: 'robots',
-    content: (noindex ? 'no' : '') + "index, follow"
-  }, {
-    name: 'description',
-    content: metaDescription
-  }, {
-    name: 'theme-color',
-    content: config.themeColor
-  }, {
-    property: 'og:locale',
-    content: ogLocale
-  }].concat((i18n === null || i18n === void 0 ? void 0 : i18n.localeCodes.filter(function (code) {
-    return code !== locale;
-  }).map(function (code) {
-    return {
-      property: 'og:locale:alternate',
-      content: i18n.locales[code].ogLocale
-    };
-  })) || []);
+  const { htmlLang } = siteMeta;
+  const { ogLocale } = siteMeta;
+  const { siteTitle } = siteMeta;
+  const { siteDescription } = siteMeta;
+  const isArticle = pageType === 'Article' || pageType === 'BlogPosting';
+  const metaTitle = title || siteTitle;
+  const metaDescription = description || siteDescription;
+  const meta = [
+    {
+      name: 'robots',
+      content: `${noindex ? 'no' : ''}index, follow`,
+    },
+    {
+      name: 'description',
+      content: metaDescription,
+    },
+    {
+      name: 'theme-color',
+      content: config.themeColor,
+    },
+    {
+      property: 'og:locale',
+      content: ogLocale,
+    },
+  ].concat(
+    (i18n === null || i18n === void 0
+      ? void 0
+      : i18n.localeCodes
+        .filter((code) => code !== locale)
+        .map((code) => ({
+          property: 'og:locale:alternate',
+          content: i18n.locales[code].ogLocale,
+        }))) || [],
+  );
 
   if (keywords) {
     meta.push({
       name: 'keywords',
-      content: keywords
+      content: keywords,
     });
   }
 
-  var og = [{
-    property: 'og:site_name',
-    content: i18n.locales[locale].siteShortName
-  }, {
-    property: 'og:url',
-    content: URL
-  }, {
-    property: 'og:type',
-    content: isArticle ? 'article' : 'website'
-  }, {
-    property: 'og:title',
-    content: metaTitle
-  }, {
-    property: 'og:description',
-    content: metaDescription
-  }, {
-    property: 'og:image',
-    content: imgURL || ogImage.src
-  }, {
-    property: 'og:image:alt"',
-    content: metaDescription
-  }];
+  const og = [
+    {
+      property: 'og:site_name',
+      content: i18n.locales[locale].siteShortName,
+    },
+    {
+      property: 'og:url',
+      content: URL,
+    },
+    {
+      property: 'og:type',
+      content: isArticle ? 'article' : 'website',
+    },
+    {
+      property: 'og:title',
+      content: metaTitle,
+    },
+    {
+      property: 'og:description',
+      content: metaDescription,
+    },
+    {
+      property: 'og:image',
+      content: imgURL || ogImage.src,
+    },
+    {
+      property: 'og:image:alt"',
+      content: metaDescription,
+    },
+  ];
 
   if (!imgURL) {
-    og.push({
-      property: 'og:image:width',
-      content: ogImage.width
-    }, {
-      property: 'og:image:height',
-      content: ogImage.height
-    });
+    og.push(
+      {
+        property: 'og:image:width',
+        content: ogImage.width,
+      },
+      {
+        property: 'og:image:height',
+        content: ogImage.height,
+      },
+    );
   }
 
   if (isArticle) {
     if (datePublished) {
       og.push({
         property: 'article:published_time',
-        content: datePublished
+        content: datePublished,
       });
     }
 
     if (dateModified) {
       og.push({
         property: 'article:modified_time',
-        content: dateModified
+        content: dateModified,
       });
     }
 
     if (author && author.length) {
-      author.forEach(function (name) {
+      author.forEach((name) => {
         og.push({
           property: 'article:author',
-          content: name
+          content: name,
         });
       });
     }
 
     if (tags && Array.isArray(tags)) {
-      tags.forEach(function (tag) {
+      tags.forEach((tag) => {
         og.push({
           property: 'article:tag',
-          content: tag
+          content: tag,
         });
       });
     }
@@ -472,7 +476,7 @@ var SeoBase = function SeoBase(_ref) {
   if (config.fbAppID) {
     og.push({
       property: 'fb:app_id',
-      content: config.fbAppID
+      content: config.fbAppID,
     });
   }
 
@@ -480,138 +484,159 @@ var SeoBase = function SeoBase(_ref) {
     if (socialLinks.facebook) {
       og.push({
         property: 'article:publisher',
-        content: socialLinks.facebook.to
+        content: socialLinks.facebook.to,
       });
     }
 
-    Array.prototype.push.apply(og, Object.keys(socialLinks).map(function (key) {
-      return {
+    Array.prototype.push.apply(
+      og,
+      Object.keys(socialLinks).map((key) => ({
         property: 'og:see_also',
-        content: socialLinks[key].to
-      };
-    }));
+        content: socialLinks[key].to,
+      })),
+    );
   }
 
-  var twitter = [{
-    name: 'twitter:card',
-    content: 'summary_large_image'
-  }, {
-    name: 'twitter:title',
-    content: metaTitle
-  }, {
-    name: 'twitter:description',
-    content: metaDescription
-  }, {
-    name: 'twitter:image',
-    content: imgURL || twitterImage.src
-  }, {
-    name: 'twitter:image:alt',
-    content: metaDescription
-  }];
+  const twitter = [
+    {
+      name: 'twitter:card',
+      content: 'summary_large_image',
+    },
+    {
+      name: 'twitter:title',
+      content: metaTitle,
+    },
+    {
+      name: 'twitter:description',
+      content: metaDescription,
+    },
+    {
+      name: 'twitter:image',
+      content: imgURL || twitterImage.src,
+    },
+    {
+      name: 'twitter:image:alt',
+      content: metaDescription,
+    },
+  ];
 
   if (!imgURL) {
-    twitter.push({
-      name: 'twitter:image:width',
-      content: twitterImage.width
-    }, {
-      name: 'twitter:image:height',
-      content: twitterImage.height
-    });
+    twitter.push(
+      {
+        name: 'twitter:image:width',
+        content: twitterImage.width,
+      },
+      {
+        name: 'twitter:image:height',
+        content: twitterImage.height,
+      },
+    );
   }
 
   if (config.twitterCreator || config.twitterSite) {
-    twitter.push({
-      name: 'twitter:site',
-      content: config.twitterSite || config.twitterCreator
-    }, {
-      name: 'twitter:creator',
-      content: config.twitterCreator || config.twitterSite
-    });
+    twitter.push(
+      {
+        name: 'twitter:site',
+        content: config.twitterSite || config.twitterCreator,
+      },
+      {
+        name: 'twitter:creator',
+        content: config.twitterCreator || config.twitterSite,
+      },
+    );
   }
 
-  var link = [{
-    rel: 'author',
-    type: 'text/plain',
-    href: config.siteUrl + "/humans.txt"
-  }];
+  const link = [
+    {
+      rel: 'author',
+      type: 'text/plain',
+      href: `${config.siteUrl}/humans.txt`,
+    },
+  ];
 
   if (canonical) {
     link.push({
       rel: 'canonical',
-      href: URL
+      href: URL,
     });
   }
 
   if (i18n) {
-    Array.prototype.push.apply(link, i18n.localeCodes.map(function (code) {
-      return {
+    Array.prototype.push.apply(
+      link,
+      i18n.localeCodes.map((code) => ({
         rel: 'alternate',
         hrefLang: i18n.locales[code].htmlLang,
-        href: "" + config.siteUrl + i18n.localizePath(purePath, code)
-      };
-    }));
+        href: `${config.siteUrl}${i18n.localizePath(purePath, code)}`,
+      })),
+    );
     link.push({
       rel: 'alternate',
       hrefLang: 'x-default',
-      href: "" + config.siteUrl + purePath
+      href: `${config.siteUrl}${purePath}`,
     });
   }
 
-  var scriptSrc = [getWebSiteSchema({
-    siteUrl: config.siteUrl,
-    siteTitle: siteTitle,
-    siteDescription: siteDescription,
-    htmlLang: htmlLang
-  }), getPageSchema({
-    organizationName: orgAddress.name,
-    siteUrl: config.siteUrl,
-    siteLogo: config.siteLogo,
-    URL: URL,
-    headline: headline || metaDescription,
-    metaTitle: metaTitle,
-    metaDescription: metaDescription,
-    htmlLang: htmlLang,
-    imgURL: imgURL,
-    datePublished: datePublished,
-    dateModified: dateModified,
-    author: author,
-    pageType: pageType
-  })];
+  const scriptSrc = [
+    getWebSiteSchema({
+      siteUrl: config.siteUrl,
+      siteTitle,
+      siteDescription,
+      htmlLang,
+    }),
+    getPageSchema({
+      organizationName: orgAddress.name,
+      siteUrl: config.siteUrl,
+      siteLogo: config.siteLogo,
+      URL,
+      headline: headline || metaDescription,
+      metaTitle,
+      metaDescription,
+      htmlLang,
+      imgURL,
+      datePublished,
+      dateModified,
+      author,
+      pageType,
+    }),
+  ];
 
   if (isRoot) {
-    scriptSrc.push(getOrganizationSchema({
-      orgContacts: orgContacts,
-      orgAddress: orgAddress,
-      config: config,
-      homeURL: homeURL,
-      socialLinks: socialLinks
-    }));
+    scriptSrc.push(
+      getOrganizationSchema({
+        orgContacts,
+        orgAddress,
+        config,
+        homeURL,
+        socialLinks,
+      }),
+    );
   }
 
   if (!config.noBreadcrumbs && !isRoot && breadcrumbs && breadcrumbs.length) {
-    scriptSrc.push(getBreadcrumbsSchema({
-      breadcrumbs: breadcrumbs,
-      siteUrl: config.siteUrl
-    }));
+    scriptSrc.push(
+      getBreadcrumbsSchema({
+        breadcrumbs,
+        siteUrl: config.siteUrl,
+      }),
+    );
   }
 
-  var scripts = scriptSrc.map(function (el) {
-    return {
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify(el)
-    };
-  });
-  return /*#__PURE__*/React.createElement(reactHelmet.Helmet, {
+  const scripts = scriptSrc.map((el) => ({
+    type: 'application/ld+json',
+    innerHTML: JSON.stringify(el),
+  }));
+  return /* #__PURE__ */ React.createElement(reactHelmet.Helmet, {
     htmlAttributes: {
-      lang: htmlLang
+      lang: htmlLang,
     },
     title: metaTitle,
     meta: [].concat(meta, og, twitter, metas || []),
     link: [].concat(link, links || []),
-    script: scripts
+    script: scripts,
   });
 };
 
 exports.SeoBase = SeoBase;
 exports.getPageSchema = getPageSchema;
-//# sourceMappingURL=index.js.map
+// # sourceMappingURL=index.js.map

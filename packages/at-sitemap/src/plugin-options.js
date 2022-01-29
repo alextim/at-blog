@@ -1,39 +1,55 @@
 const sanitize = (x, defaultValue) => (x === undefined ? defaultValue : x);
 const sanitizeTrue = (x) => !!sanitize(x, true);
 
-module.exports = (pluginOptions) => ({
+const getPluginOptions = ({
+  createRobotsTxt,
+  noIndex,
+  excludePaths = ['/dev-404-page', '/404', '/404.html'],
+  sitemapFileName = 'sitemap.xml',
+  buildDir = './public',
+  lastmod,
+  lastmodDateOnly,
+  includeImages,
+  ignoreImagesWithoutAlt,
+  createLinkInHead,
+  specialFolder = 'assets',
+  defaultLang,
+  locales,
+}) => ({
   // default: true
-  createRobotsTxt: sanitizeTrue(pluginOptions.createRobotsTxt),
+  createRobotsTxt: sanitizeTrue(createRobotsTxt),
   // default: true
-  noIndex: !!pluginOptions.noIndex,
+  noIndex: !!noIndex,
 
   // pages to exclude.
   // Paths must start with "/"
-  excludePaths: pluginOptions.excludePaths || ['/dev-404-page', '/404', '/404.html'],
+  excludePaths,
 
   // generated sitemap filenames
-  sitemapFileName: pluginOptions.sitemapFileName || 'sitemap.xml',
+  sitemapFileName,
 
   // build dir to read the output files from
   // also to write the sitemap to
-  buildDir: pluginOptions.buildDir || './public',
+  buildDir,
 
   // default: 1
   // 0 - no
   // 1 - build date
   // 2 - dateModified
-  lastmod: pluginOptions.lastmod == null ? 1 : Number(pluginOptions.lastmod),
-  lastmodDateOnly: !!pluginOptions.lastmodDateOnly,
+  lastmod: lastmod == null ? 1 : Number(lastmod),
+  lastmodDateOnly: !!lastmodDateOnly,
 
-  includeImages: sanitizeTrue(pluginOptions.includeImages),
+  includeImages: sanitizeTrue(includeImages),
   // don't add images with missing alt tag to sitemap
-  ignoreImagesWithoutAlt: sanitizeTrue(pluginOptions.ignoreImagesWithoutAlt),
+  ignoreImagesWithoutAlt: sanitizeTrue(ignoreImagesWithoutAlt),
 
   // add sitemaps link to pages' head
-  createLinkInHead: sanitizeTrue(pluginOptions.createLinkInHead),
+  createLinkInHead: sanitizeTrue(createLinkInHead),
 
-  specialFolder: pluginOptions.specialFolder || 'assets',
-  
-  defaultLang: pluginOptions.defaultLang,
-  locales: pluginOptions.locales,
+  specialFolder,
+
+  defaultLang,
+  locales,
 });
+
+module.exports = getPluginOptions;

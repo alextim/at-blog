@@ -6,6 +6,7 @@
 .tmp
 .vscode
 build
+dist
 node_modules
 public
 package.json

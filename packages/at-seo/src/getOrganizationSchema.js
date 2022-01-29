@@ -92,14 +92,7 @@ const getOrganizationSchema = ({
     paymentAccepted,
   } = orgContacts;
 
-  const {
-    name: organizationName,
-    legalName,
-    alternateName,
-    description,
-    postalAddress,
-    contactPoint,
-  } = orgAddress;
+  const { name: organizationName, legalName, alternateName, description, postalAddress, contactPoint } = orgAddress;
 
   const schema = {
     '@context': 'https://schema.org',
@@ -111,9 +104,7 @@ const getOrganizationSchema = ({
     logo: config.siteLogo,
   };
   if (config.siteBusinessPhoto) {
-    schema.image = Array.isArray(config.siteBusinessPhoto)
-      ? [...config.siteBusinessPhoto]
-      : config.siteBusinessPhoto;
+    schema.image = Array.isArray(config.siteBusinessPhoto) ? [...config.siteBusinessPhoto] : config.siteBusinessPhoto;
   }
 
   if (postalAddress) {
@@ -139,7 +130,7 @@ const getOrganizationSchema = ({
     schema.telephone = utils.formatPhone(organizationPhone[0]);
   }
   if (organizationEmail) {
-    schema.email = organizationEmail[0];
+    [schema.email] = organizationEmail;
   }
 
   if (geo) {
@@ -150,28 +141,23 @@ const getOrganizationSchema = ({
   }
 
   if (contactPoint) {
-    schema.contactPoint = contactPoint.map(
-      ({ name, contactType, telephone, email, areaServed }) => {
-        const o = {
-          '@type': 'ContactPoint',
-          name,
-          contactType,
-        };
-        if (telephone) {
-          o.telephone = telephone.reduce(
-            (acc, curr) => `${acc}${acc ? ', ' : ''}${utils.formatPhone(curr)}`,
-            '',
-          );
-        }
-        if (email) {
-          o.email = email.join();
-        }
-        if (areaServed) {
-          o.areaServed = areaServed;
-        }
-        return o;
-      },
-    );
+    schema.contactPoint = contactPoint.map(({ name, contactType, telephone, email, areaServed }) => {
+      const o = {
+        '@type': 'ContactPoint',
+        name,
+        contactType,
+      };
+      if (telephone) {
+        o.telephone = telephone.reduce((acc, curr) => `${acc}${acc ? ', ' : ''}${utils.formatPhone(curr)}`, '');
+      }
+      if (email) {
+        o.email = email.join();
+      }
+      if (areaServed) {
+        o.areaServed = areaServed;
+      }
+      return o;
+    });
   }
 
   if (socialLinks) {

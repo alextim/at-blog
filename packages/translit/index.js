@@ -57,7 +57,7 @@ const common = {
 
   ґ: 'g',
   "'": '',
-  "’": '',
+  '’': '',
 };
 
 const first = {
@@ -70,10 +70,10 @@ const first = {
 
 const translit = (src, locale) => {
   if (locale !== 'uk' && locale !== 'ru') {
-    throw `Translit: unsupported default locale ${locale}`;
+    throw new Error(`Translit: unsupported default locale ${locale}`);
   }
   if (!src) {
-    return src;
+    return null;
   }
   let prepared = src.toLowerCase();
   let all;

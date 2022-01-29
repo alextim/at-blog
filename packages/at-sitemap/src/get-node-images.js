@@ -24,7 +24,7 @@ const imagesFromAst = (htmlAst, specialFolder) => {
   return a;
 };
 
-module.exports = (siteUrl, { htmlAst, cover, sections }, ignoreImagesWithoutAlt) => {
+const getNodeImages = (siteUrl, { htmlAst, cover, sections }, ignoreImagesWithoutAlt) => {
   const pageImages = {};
 
   const addImage = (image) => {
@@ -67,3 +67,5 @@ module.exports = (siteUrl, { htmlAst, cover, sections }, ignoreImagesWithoutAlt)
     caption: pageImages[image].title,
   }));
 };
+
+module.exports = getNodeImages;

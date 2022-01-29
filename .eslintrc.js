@@ -11,6 +11,7 @@ module.exports = {
     node: true,
     browser: true,
     es2021: true,
+    'jest/globals': true,
   },
   parserOptions: {
     ecmaVersion: 2021,
@@ -31,9 +32,10 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:react/jsx-runtime',
+    'plugin:jest/all',
     'prettier',
   ],
-  plugins: ['jsx-a11y', 'react-hooks', 'import', 'prettier'],
+  plugins: ['jsx-a11y', 'react-hooks', 'import', 'jest', 'prettier'],
   rules: {
     indent: ['error', 2, { SwitchCase: 1 }],
     quotes: [2, 'single', { avoidEscape: true }],
@@ -45,6 +47,14 @@ module.exports = {
     'no-unused-vars': 'error',
     'import/no-named-as-default': 0,
     'prettier/prettier': 'error',
+    'jest/prefer-expect-assertions': [
+      'warn',
+      {
+        onlyFunctionsWithAsyncKeyword: true,
+        onlyFunctionsWithExpectInLoop: true,
+        onlyFunctionsWithExpectInCallback: true,
+      },
+    ],
   },
   ignorePatterns: [
     '**/node_modules/**',
@@ -55,5 +65,6 @@ module.exports = {
     '**/build/**',
     '**/database/**',
     '**/public/**',
+    '**/dist/**',
   ],
 };

@@ -1,7 +1,7 @@
 const createSitemap = require('./create-sitemap');
 const createRobotsTxt = require('./create-robots-txt');
 const withOptions = require('./plugin-options');
-          
+
 module.exports = async ({ graphql, reporter }, pluginOptions) => {
   reporter.info('at-sitemap: started...');
 
@@ -94,14 +94,11 @@ module.exports = async ({ graphql, reporter }, pluginOptions) => {
   }
   const { siteUrl } = result.data.site.siteMetadata;
 
-  const inExcludedPaths = (slug) =>
-    options.excludePaths.some((exPath) => slug.indexOf(exPath) !== -1);
+  const inExcludedPaths = (slug) => options.excludePaths.some((exPath) => slug.indexOf(exPath) !== -1);
 
   const pages = result.data.pages.edges.filter(({ node: { slug } }) => !inExcludedPaths(slug));
   const posts = result.data.posts.edges.filter(({ node: { slug } }) => !inExcludedPaths(slug));
-  const allSitePages = result.data.allSitePage.edges.filter(
-    ({ node: { path } }) => !inExcludedPaths(path),
-  );
+  const allSitePages = result.data.allSitePage.edges.filter(({ node: { path } }) => !inExcludedPaths(path));
 
   const allMdPages = [...pages, ...posts];
 
@@ -111,13 +108,7 @@ module.exports = async ({ graphql, reporter }, pluginOptions) => {
     reporter.info(`Md Pages: ${pages.length}`);
     reporter.info('------------------');
     reporter.info(`Total Nodes: ${allSitePages.length}`);
-    mainNotEmpty = createSitemap(
-      allSitePages,
-      allMdPages,
-      reporter,
-      options,
-      siteUrl,
-    );
+    mainNotEmpty = createSitemap(allSitePages, allMdPages, reporter, options, siteUrl);
   } else {
     reporter.info('No data for sitemap');
   }

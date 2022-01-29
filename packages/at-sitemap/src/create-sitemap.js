@@ -21,17 +21,11 @@ const getSlugLocale = (slug, localeCodes, defaultLang) => {
   return locale;
 };
 
-module.exports = (
-  allSitePages,
-  allMdPages,
-  reporter,
-  options,
-  siteUrl,
-) => {
+module.exports = (allSitePages, allMdPages, reporter, options, siteUrl) => {
   reporter.info(`Parsing ${allSitePages.length} nodes...`);
 
   const { locales, defaultLang } = options;
-  
+
   const localeCodes = Object.keys(locales);
 
   const buildDate = new Date().toISOString();

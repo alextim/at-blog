@@ -55,14 +55,10 @@ const formatPhone = (s) => {
   if (n === 10) {
     return `${s.substr(0, 3)} ${s.substr(3, 3)}-${s.substr(6, 2)}-${s.substr(8, 2)}`;
   }
-  return `+${s.substr(0, 2)} (${s.substr(2, 3)}) ${s.substr(5, 3)}-${s.substr(8, 2)}-${s.substr(
-    10,
-    2,
-  )}`;
+  return `+${s.substr(0, 2)} (${s.substr(2, 3)}) ${s.substr(5, 3)}-${s.substr(8, 2)}-${s.substr(10, 2)}`;
 };
 
-const isMobile = () =>
-  isSSR() ? undefined : /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+const isMobile = () => (isSSR() ? undefined : /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent));
 /** **
   *
   *   https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
@@ -84,8 +80,8 @@ const whatsappUrl = (whatsapp) => `https://wa.me/${whatsapp}`;
 const telegramUrl = (telegram) => `tg://resolve?domain=${telegram}`;
 const viberUrl = (viber) => `viber://add?number=${isMobile() ? '+' : ''}${viber}`;
 
-const toUnicode = (str) => {
-  return str
+const toUnicode = (str) =>
+  str
     .split('')
     .map((value) => {
       const temp = value.charCodeAt(0).toString(16).toUpperCase();
@@ -95,7 +91,6 @@ const toUnicode = (str) => {
       return value;
     })
     .join('');
-};
 
 const obfuscate = (x) => {
   if (!x) {
