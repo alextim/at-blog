@@ -52,6 +52,8 @@ jobs:
         run: yarn install --prefer-offline --frozen-lockfile --ignore-engines --registry https://registry.npmjs.org --network-timeout 300000
         env:
           CI: true
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Creating .npmrc
         run: |
@@ -72,6 +74,7 @@ jobs:
       - name: Publish
         env:
           GH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           git config user.name "${{ github.actor }}"

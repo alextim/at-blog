@@ -51,13 +51,16 @@ const formatPhone = (s) => {
   if (!s) {
     return '';
   }
+
   const n = s.length;
   if (n === 7) {
     return `${s.substr(0, 3)}-${s.substr(3, 2)}-${s.substr(5, 2)}`;
   }
+
   if (n === 10) {
     return `${s.substr(0, 3)} ${s.substr(3, 3)}-${s.substr(6, 2)}-${s.substr(8, 2)}`;
   }
+
   return `+${s.substr(0, 2)} (${s.substr(2, 3)}) ${s.substr(5, 3)}-${s.substr(8, 2)}-${s.substr(10, 2)}`;
 };
 
