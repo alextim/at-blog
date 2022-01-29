@@ -51,7 +51,6 @@ const formatPhone = (s) => {
   if (!s) {
     return '';
   }
-
   const n = s.length;
   if (n === 7) {
     return `${s.substr(0, 3)}-${s.substr(3, 2)}-${s.substr(5, 2)}`;
