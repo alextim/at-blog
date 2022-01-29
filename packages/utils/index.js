@@ -43,6 +43,7 @@ const formatUrl = (url) => {
       }
     }
   }
+
   return result;
 };
 
