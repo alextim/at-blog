@@ -5,6 +5,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 # Automatically cancel in-progress actions on the same branch
 concurrency:
@@ -32,6 +35,8 @@ jobs:
           cache: 'yarn'
           registry-url: https://npm.pkg.github.com/
           scope: '@alextim'
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Cache Node Modules
         id: cache-node
@@ -48,31 +53,15 @@ jobs:
         env:
           CI: true
 
-      - name: Creating .npmrc
-        run: |
-          cat << EOF > "$HOME/.npmrc"
-            @alextim:registry=https://npm.pkg.github.com
-            //npm.pkg.github.com/:_authToken=$NPM_TOKEN
-          EOF
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      #- name: Create Release Pull Request or Publish to npm
-      #  id: changesets
-      #  uses: changesets/action@v1
-      #  with:
-      #    # This expects you to have a script called release which does a build for your packages and calls changeset publish
-      #    publish: yarn release
-      #    commit: '[ci] release'
-      #    title: '[ci] release'
+      #- name: Creating .npmrc
+      #  run: |
+      #    cat << EOF > "$HOME/.npmrc"
+      #      @alextim:registry=https://npm.pkg.github.com
+      #      //npm.pkg.github.com/:_authToken=$NPM_TOKEN
+      #    EOF
       #  env:
-      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       #    NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      #- name: Generate Notification
-      #  id: notification
-      #  if: steps.changesets.outputs.published == 'true'
-      #  run: message=$(node scripts/notify/index.js '${{ steps.changesets.outputs.publishedPackages }}') && echo ::set-output name=message::${message//$'\n'/'%0A'}
       - name: Release snapshot
         run: |
           yarn changeset version --snapshot
@@ -80,13 +69,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Post published version to GitHub checks
+      - name: Publish
         run: |
-          name=$(jq -r .name package.json)
-          version=$(jq -r .version package.json)
-          npx action-status --context=$name --state=success --description=$version --url="https://unpkg.com/$name@$version/"
+          lerna publish from-package --yes --no-verify-access
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Send a Slack notification if a publish happens
         if: steps.changesets.outputs.published == 'true'

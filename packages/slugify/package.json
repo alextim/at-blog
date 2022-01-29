@@ -22,6 +22,7 @@
     "url": "https://github.com/alextim/at-blog/issues"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
   }
 }

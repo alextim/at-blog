@@ -31,7 +31,8 @@
     "test": "echo \"Write tests!\" && exit 0"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
   },
   "comments": {
     "name": "at-sitemap"
