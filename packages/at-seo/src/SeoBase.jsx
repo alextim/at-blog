@@ -277,6 +277,7 @@ const SeoBase = ({
       siteDescription,
       htmlLang,
     }),
+
     getPageSchema({
       organizationName: orgAddress.name,
       siteUrl: config.siteUrl,
@@ -305,6 +306,7 @@ const SeoBase = ({
       }),
     );
   }
+
   if (!config.noBreadcrumbs && !isRoot && breadcrumbs && breadcrumbs.length) {
     scriptSrc.push(
       getBreadcrumbsSchema({
@@ -313,6 +315,7 @@ const SeoBase = ({
       }),
     );
   }
+
   const scripts = scriptSrc.map((el) => ({
     type: 'application/ld+json',
     innerHTML: JSON.stringify(el),
