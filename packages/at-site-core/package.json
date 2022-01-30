@@ -1,7 +1,7 @@
 {
   "name": "@alextim/at-site-core",
   "description": "Markdown site core: pages, nav bar menu, footer menu, social links, address, translations",
-  "version": "0.8.18",
+  "version": "0.8.19",
   "license": "MIT",
   "author": "Oleksii Tymoshenko <buildmnt@gmail.com>",
   "keywords": [
