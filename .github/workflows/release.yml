@@ -51,7 +51,7 @@ jobs:
       - name: Check if able to publish changes
         run: |
           cat /home/runner/work/_temp/.npmrc
-          npm whoami # will throw and exit if npm is not ready to publish
+          # npm whoami # will throw and exit if npm is not ready to publish
 
       - name: Cache Node Modules
         id: cache-node
