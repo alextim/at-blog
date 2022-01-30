@@ -22,7 +22,7 @@ concurrency:
 jobs:
   release:
     name: Release
-    if: ${{ github.ref_name == 'main' && github.repository_owner == 'alextim' }}
+    # if: ${{ github.ref_name == 'main' && github.repository_owner == 'alextim' }}
     runs-on: ubuntu-latest
     env:
       NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
