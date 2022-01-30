@@ -2,7 +2,7 @@ const React = require('react');
 // eslint-disable-next-line import/no-unresolved
 const { withPrefix } = require('gatsby');
 const withOptions = require('./src/plugin-options');
-const { name: pluginName } = require('./package.json');
+const { pluginName } = require('./src/constants');
 
 exports.onRenderBody = async ({ setHeadComponents }, pluginOptions) => {
   const { sitemapFileName, createLinkInHead } = withOptions(pluginOptions);

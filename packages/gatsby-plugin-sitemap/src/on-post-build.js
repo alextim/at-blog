@@ -1,8 +1,7 @@
 const createSitemap = require('./create-sitemap');
 const createRobotsTxt = require('./create-robots-txt');
 const withOptions = require('./plugin-options');
-
-const { name: pluginName } = require('../../../package.json');
+const { pluginName } = require('./constants');
 
 module.exports = async ({ graphql, reporter }, pluginOptions) => {
   reporter.info(`${pluginName}: started...`);
