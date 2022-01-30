@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.8.20 (2022-01-30)
+
+**Note:** Version bump only for package @alextim/gatsby-plugin-blogcore
+
+
+
+
+
 <<<<<<< HEAD:packages/gatsby-plugin-sitecore/CHANGELOG.md
 ## [0.8.18](https://github.com/alextim/at-blog/compare/@alextim/gatsby-plugin-blogcore@0.8.17...@alextim/gatsby-plugin-blogcore@0.8.18) (2022-01-30)
 =======
