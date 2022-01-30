@@ -24,14 +24,14 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
         with:
-            ref: ${{ github.event.release.target_commitish }} 
+            ref: ${{ github.event.release.target_commitish }}
 
       # This is the action in this repo! 👇
       # Note we set an `id` called `release`. We'll use that later...
       - name: Validate and extract release information
         id: release
-        uses: manovotny/github-releases-for-automated-package-publishing-action@v1.0.0                   
-      
+        uses: manovotny/github-releases-for-automated-package-publishing-action@v1.0.0
+
       - name: Set node version
         uses: actions/setup-node@v2
         with:
@@ -40,8 +40,9 @@ jobs:
           scope: '@alextim'
 
       - run: yarn install
-      - run: git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com" && git config --global user.name "$GITHUB_ACTOR"
-      
+      - run: |
+
+
       # This will publish a "pre-release" or "tagged" version of a package.
       - name: Publish tagged version
         if: steps.release.outputs.tag != ''
@@ -54,8 +55,8 @@ jobs:
         if: steps.release.outputs.tag == ''
         run: yarn publish --new-version ${{ steps.release.outputs.version }}
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
-      
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       #- run: yarn version --minor
       #- run: git push --tags && git push
       #- run: yarn publish
