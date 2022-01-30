@@ -5,10 +5,15 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - '**/*.md'
+      - '.github'
   pull_request:
     branches:
       - main
-
+    paths-ignore:
+      - '**/*.md'
+      - '.github'
 # Automatically cancel in-progress actions on the same branch
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name == 'pull_request_target' && github.head_ref || github.ref }}
@@ -33,7 +38,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 16
-          cache: 'yarn'
+          cache: yarn
           # setup .npmrc using NODE_AUTH_TOKEN
           # name: Setup .npmrc file for publish
           # skip 'registry-url' and 'always-auth: true' parameters if these are provided by a custom .npmrc file
@@ -45,9 +50,7 @@ jobs:
       - name: Git Identity
         run: |
           git config --global user.name "$GITHUB_ACTOR"
-          # git config --global user.name 'github-actions[bot]'
           git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
-          # git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
       - name: Cache Node Modules
         id: cache-node
@@ -66,13 +69,14 @@ jobs:
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Build
+        run: |
+          yarn build
+
+      - name: Test
+        run: |
+          yarn test
+
       - name: Publish
         run: |
           lerna publish --no-verify-access # the flag is needed if NPM_TOKEN is an Automation Token
-
-      - name: Send a Slack notification if a publish happens
-        if: steps.changesets.outputs.published == 'true'
-        # You can do something when a publish happens.
-        run: |
-          # my-slack-bot send-notification --message "A new version of ${GITHUB_REPOSITORY} was published!"
-          echo "A new version of ${GITHUB_REPOSITORY} was published!"

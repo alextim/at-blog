@@ -19,7 +19,8 @@
     "url": "https://github.com/alextim/at-blog/issues"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "echo \"Build isn't needed!\" && exit 0"
   },
   "peerDependencies": {
     "@alextim/i18n-utils": ">=0.1.1",
