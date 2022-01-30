@@ -26,7 +26,7 @@
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "changeset publish",
-    "commit-version": "git add . && git commit -m \"chore(release): publish `node -p 'require(\"./lerna.json\").version'`\""
+    "commit": "git add . && git commit -m \"chore(release): publish\" && git push"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.5",
