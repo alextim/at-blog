@@ -1,5 +1,5 @@
 {
-  "name": "@alextim/at-sitemap",
+  "name": "@alextim/gatsby-plugin-sitemap",
   "description": "Replacement for gatsby-plugin-sitemap. Serves: pages and posts with state non 'draft' and related images",
   "version": "0.4.5",
   "license": "MIT",
@@ -9,11 +9,11 @@
     "gatsbyjs"
   ],
   "main": "n/a",
-  "homepage": "https://github.com/alextim/at-blog/tree/master/packages/at-sitemap#readme",
+  "homepage": "https://github.com/alextim/at-blog/tree/master/packages/gatsby-plugin-sitemap#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/alextim/at-blog.git",
-    "directory": "packages/at-sitemap"
+    "directory": "packages/gatsby-plugin-sitemap"
   },
   "bugs": {
     "url": "https://github.com/alextim/at-blog/issues"
@@ -34,6 +34,6 @@
     "access": "public"
   },
   "comments": {
-    "name": "at-sitemap"
+    "name": "gatsby-plugin-sitemap"
   }
 }

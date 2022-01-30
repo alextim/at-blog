@@ -1,5 +1,5 @@
 {
-  "name": "@alextim/at-site-core",
+  "name": "@alextim/gatsby-plugin-blogcore",
   "description": "Markdown site core: pages, nav bar menu, footer menu, social links, address, translations",
   "version": "0.8.18",
   "license": "MIT",
@@ -9,11 +9,11 @@
     "gatsbyjs"
   ],
   "main": "index.js",
-  "homepage": "https://github.com/alextim/at-blog/tree/master/packages/at-site-core#readme",
+  "homepage": "https://github.com/alextim/at-blog/tree/master/packages/gatsby-plugin-blogcore#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/alextim/at-blog.git",
-    "directory": "packages/at-site-core"
+    "directory": "packages/gatsby-plugin-blogcore"
   },
   "bugs": {
     "url": "https://github.com/alextim/at-blog/issues"
