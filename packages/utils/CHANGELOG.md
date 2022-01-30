@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.12](https://github.com/alextim/at-blog/compare/@alextim/utils@0.1.11...@alextim/utils@0.1.12) (2022-01-30)
+
+**Note:** Version bump only for package @alextim/utils
+
+
+
+
+
 ## [0.1.11](https://github.com/alextim/at-blog/compare/@alextim/utils@0.1.10...@alextim/utils@0.1.11) (2022-01-30)
 
 **Note:** Version bump only for package @alextim/utils
