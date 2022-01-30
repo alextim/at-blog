@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.5](https://github.com/alextim/at-blog/compare/@alextim/at-sitemap@0.4.4...@alextim/at-sitemap@0.4.5) (2022-01-30)
+
+**Note:** Version bump only for package @alextim/at-sitemap
+
+
+
+
+
 ## [0.4.4](https://github.com/alextim/at-blog/compare/@alextim/at-sitemap@0.4.3...@alextim/at-sitemap@0.4.4) (2022-01-30)
 
 **Note:** Version bump only for package @alextim/at-sitemap
