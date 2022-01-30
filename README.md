@@ -1,1 +1,3 @@
-https://github.com/azu/lerna-monorepo-github-actions-release/blob/master/.github/workflows/publish.yml
+# AT-BLOG
+
+Set of packages for s-bars.com.ua && igryg.com

@@ -40,7 +40,6 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
-    "access": "public",
-    "directory": "dist"
+    "access": "public"
   }
 }
