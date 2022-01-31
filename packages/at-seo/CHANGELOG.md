@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.15](https://github.com/alextim/at-blog/compare/@alextim/at-seo@0.4.14...@alextim/at-seo@0.4.15) (2022-01-31)
+
+
+### Bug Fixes
+
+* at-seo dist ([ebeeaad](https://github.com/alextim/at-blog/commit/ebeeaad184c90c587368b59d2975b8b5a9c5e6c9))
+* at-seo dist2 ([f6254b4](https://github.com/alextim/at-blog/commit/f6254b497a510881fb6fde6ab2d854b0d2b59857))
+
+
+
+
+
 ## [0.4.14](https://github.com/alextim/at-blog/compare/@alextim/at-seo@0.4.13...@alextim/at-seo@0.4.14) (2022-01-30)
 
 **Note:** Version bump only for package @alextim/at-seo

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.10](https://github.com/alextim/at-blog/compare/@alextim/gatsby-plugin-sitemap@0.4.9...@alextim/gatsby-plugin-sitemap@0.4.10) (2022-01-31)
+
+**Note:** Version bump only for package @alextim/gatsby-plugin-sitemap
+
+
+
+
+
 ## [0.4.9](https://github.com/alextim/at-blog/compare/@alextim/gatsby-plugin-sitemap@0.4.8...@alextim/gatsby-plugin-sitemap@0.4.9) (2022-01-30)
 
 **Note:** Version bump only for package @alextim/gatsby-plugin-sitemap
