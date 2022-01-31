@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.17](https://github.com/alextim/at-blog/compare/@alextim/at-seo@0.4.16...@alextim/at-seo@0.4.17) (2022-01-31)
+
+
+### Bug Fixes
+
+* lerna publish ([6cee90e](https://github.com/alextim/at-blog/commit/6cee90e8336a5f1905f0424761fcba3966998c9d))
+
+
+
+
+
 ## [0.4.16](https://github.com/alextim/at-blog/compare/@alextim/at-seo@0.4.15...@alextim/at-seo@0.4.16) (2022-01-31)
 
 
