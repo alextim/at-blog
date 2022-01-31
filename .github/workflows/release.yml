@@ -79,9 +79,7 @@ jobs:
 
       - name: Publish
         run: |
-          dir
           cd node_modules/
-          dir
           cd .bin/
           dir
           cd ..
