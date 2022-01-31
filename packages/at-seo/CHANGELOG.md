@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.16](https://github.com/alextim/at-blog/compare/@alextim/at-seo@0.4.15...@alextim/at-seo@0.4.16) (2022-01-31)
+
+
+### Bug Fixes
+
+* at-seo dist3 ([0df607b](https://github.com/alextim/at-blog/commit/0df607baaaaf43163f6efe895d90873575ff46ea))
+
+
+
+
+
 ## [0.4.15](https://github.com/alextim/at-blog/compare/@alextim/at-seo@0.4.14...@alextim/at-seo@0.4.15) (2022-01-31)
 
 
