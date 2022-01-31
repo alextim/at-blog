@@ -5,12 +5,21 @@
   "version": "independent",
   "command": {
     "publish": {
+      "ignoreChanges": [
+        "scripts/**",
+        "lerna.json",
+        "CHANGELOG.md",
+        "**/__tests__/**",
+        "**/__mocks__/**",
+        "**/__testfixtures__/**",
+        "**/*.md",
+        "**/*test.js"
+      ],
       "conventionalCommits": true,
       "message": "chore(release): publish",
       "registry": "https://npm.pkg.github.com",
       "allowBranch": "main",
       "yes": true
     }
-  },
-  "ignoreChanges": ["CHANGELOG.md", "**/__tests__/**", "**/__mocks__/**", "**/__testfixtures__/**"]
+  }
 }

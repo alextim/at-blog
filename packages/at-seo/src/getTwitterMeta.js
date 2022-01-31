@@ -14,7 +14,7 @@ const getTwitterMeta = ({ metaTitle, metaDescription, imgURL, twitterImage, twit
     },
     {
       name: 'twitter:image',
-      content: imgURL || twitterImage.src,
+      content: twitterImage?.src || imgURL,
     },
     {
       name: 'twitter:image:alt',
@@ -22,7 +22,7 @@ const getTwitterMeta = ({ metaTitle, metaDescription, imgURL, twitterImage, twit
     },
   ];
 
-  if (!imgURL) {
+  if (twitterImage?.src) {
     twitter.push(
       {
         name: 'twitter:image:width',

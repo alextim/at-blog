@@ -55,7 +55,8 @@ const getOgMeta = ({
       content: metaDescription,
     },
   ];
-  if (ogImage && ogImage.src) {
+
+  if (ogImage?.src) {
     og.push(
       {
         property: 'og:image:width',
