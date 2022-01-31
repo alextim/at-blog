@@ -80,10 +80,9 @@ jobs:
       - name: Publish
         run: |
           dir
-          cd
-          cd node_modules
+          cd node_modules/
           dir
-          cd .bin
+          cd .bin/
           dir
           cd ..
           cd ..
