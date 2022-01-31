@@ -5,7 +5,8 @@ const getOgMeta = ({
   metaTitle,
   metaDescription,
   siteName,
-  imgURL,
+  imgUrl,
+  pageUrl,
   ogImage,
   isArticle,
   datePublished,
@@ -32,7 +33,7 @@ const getOgMeta = ({
     },
     {
       property: 'og:url',
-      content: URL,
+      content: pageUrl,
     },
     {
       property: 'og:type',
@@ -48,7 +49,7 @@ const getOgMeta = ({
     },
     {
       property: 'og:image',
-      content: ogImage?.src || imgURL,
+      content: ogImage?.src || imgUrl,
     },
     {
       property: 'og:image:alt"',

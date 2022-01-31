@@ -1,4 +1,4 @@
-const getTwitterMeta = ({ metaTitle, metaDescription, imgURL, twitterImage, twitterCreator, twitterSite }) => {
+const getTwitterMeta = ({ metaTitle, metaDescription, imgUrl, twitterImage, twitterCreator, twitterSite }) => {
   const twitter = [
     {
       name: 'twitter:card',
@@ -14,7 +14,7 @@ const getTwitterMeta = ({ metaTitle, metaDescription, imgURL, twitterImage, twit
     },
     {
       name: 'twitter:image',
-      content: twitterImage?.src || imgURL,
+      content: twitterImage?.src || imgUrl,
     },
     {
       name: 'twitter:image:alt',

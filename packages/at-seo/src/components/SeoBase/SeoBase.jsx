@@ -39,12 +39,12 @@ const SeoBase = ({
 }) => {
   const isRoot = pathname === '/';
 
-  const URL = `${config.siteUrl}${pathname}`;
-  const homeURL = i18n ? `${config.siteUrl}${i18n.localizePath('/', locale)}` : URL;
+  const pageUrl = `${config.siteUrl}${pathname}`;
+  const homeUrl = i18n ? `${config.siteUrl}${i18n.localizePath('/', locale)}` : pageUrl;
 
-  let imgURL;
+  let imgUrl;
   if (imgPath) {
-    imgURL = `${config.siteUrl}${imgPath}`;
+    imgUrl = `${config.siteUrl}${imgPath}`;
   }
 
   const purePath = i18n ? i18n.purePath(pathname) : pathname;
@@ -92,7 +92,8 @@ const SeoBase = ({
     metaTitle,
     metaDescription,
     siteName: i18n.locales[locale].siteShortName,
-    imgURL,
+    imgUrl,
+    pageUrl,
     ogImage: { ...config.ogImage, src: `${config.ogImage.src}${locale}.jpg` },
     isArticle,
     datePublished,
@@ -106,7 +107,7 @@ const SeoBase = ({
   const twitter = getTwitterMeta({
     metaTitle,
     metaDescription,
-    imgURL,
+    imgUrl,
     twitterImage: { ...config.twitterImage, src: `${config.twitterImage.src}${locale}.jpg` },
     twitterCreator: config.twitterCreator,
     twitterSite: config.twitterSite,
@@ -123,7 +124,7 @@ const SeoBase = ({
   if (canonical) {
     link.push({
       rel: 'canonical',
-      href: URL,
+      href: pageUrl,
     });
   }
 
@@ -155,12 +156,12 @@ const SeoBase = ({
       organizationName: orgAddress.name,
       siteUrl: config.siteUrl,
       siteLogo: config.siteLogo,
-      URL,
+      pageUrl,
       headline: headline || metaDescription,
       metaTitle,
       metaDescription,
       htmlLang,
-      imgURL,
+      imgUrl,
       datePublished,
       dateModified,
       author,
@@ -174,7 +175,7 @@ const SeoBase = ({
         orgContacts,
         orgAddress,
         config,
-        homeURL,
+        homeUrl,
         socialLinks,
       }),
     );

@@ -5,7 +5,7 @@ const getAuthor = (a) => {
   return a.map((name) => ({
     '@type': 'Person',
     name,
-    // TODO: add URL of author profile
+    // TODO: add Url of author profile
     // url: 'http://example.com/profile/janedoe123'
   }));
 };
@@ -14,11 +14,11 @@ const getPageSchema = ({
   organizationName,
   siteUrl,
   siteLogo,
-  URL,
+  pageUrl,
   title,
   headline,
   htmlLang,
-  imgURL,
+  imgUrl,
   datePublished,
   dateModified,
   pageType,
@@ -48,7 +48,7 @@ const getPageSchema = ({
     o.author = getAuthor(author) || o.publisher;
     o.mainEntityOfPage = {
       '@type': 'WebPage',
-      '@id': URL,
+      '@id': pageUrl,
     };
     o.headline = headline;
     if (datePublished) {
@@ -58,12 +58,12 @@ const getPageSchema = ({
       o.dateModified = dateModified;
     }
   } else {
-    o.url = URL;
+    o.url = pageUrl;
     o.description = headline;
   }
 
-  if (imgURL) {
-    o.image = imgURL;
+  if (imgUrl) {
+    o.image = imgUrl;
   }
 
   return o;
