@@ -78,10 +78,7 @@ jobs:
           yarn test
 
       - name: Publish
+        env:
+          NODE_ENV: development
         run: |
-          cd node_modules/
-          cd .bin/
-          dir
-          cd ..
-          cd ..
           lerna publish --no-verify-access # the flag is needed if NPM_TOKEN is an Automation Token
