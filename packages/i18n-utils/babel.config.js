@@ -3,5 +3,5 @@
 // Ref: https://github.com/babel/babel/pull/7358
 module.exports = {
   sourceMaps: true,
-  presets: [['babel-preset-gatsby-package', { browser: true, esm: true }]],
+  presets: [['babel-preset-gatsby-package', { browser: true }]],
 };

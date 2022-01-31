@@ -1,4 +1,4 @@
-import utils from '@alextim/utils/src';
+import utils from '@alextim/utils';
 
 const weekDays = {
   mo: 'Monday',

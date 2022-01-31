@@ -23,7 +23,8 @@
     "lint:all:fix": "yarn workspaces run lint:fix",
     "prepare": "husky install",
     "lint-staged": "lint-staged",
-    "commit": "git add . && git commit -m \"chore(release): publish\" && git push"
+    "commit": "git add . && git commit -m \"chore(release): publish\" && git push",
+    "commit:pull": "git add . && git commit -m \"chore(release): publish\" && git pull && git push"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.8",
