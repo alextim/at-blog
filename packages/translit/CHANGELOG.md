@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.9](https://github.com/alextim/at-blog/compare/@alextim/translit@0.1.8...@alextim/translit@0.1.9) (2022-01-31)
+
+
+### Bug Fixes
+
+* lerna publish ([6cee90e](https://github.com/alextim/at-blog/commit/6cee90e8336a5f1905f0424761fcba3966998c9d))
+
+
+
+
+
 ## [0.1.8](https://github.com/alextim/at-blog/compare/@alextim/translit@0.1.7...@alextim/translit@0.1.8) (2022-01-30)
 
 **Note:** Version bump only for package @alextim/translit
