@@ -48,14 +48,14 @@ const getOgMeta = ({
     },
     {
       property: 'og:image',
-      content: imgURL || ogImage.src,
+      content: ogImage?.src || imgURL,
     },
     {
       property: 'og:image:alt"',
       content: metaDescription,
     },
   ];
-  if (!imgURL) {
+  if (ogImage && ogImage.src) {
     og.push(
       {
         property: 'og:image:width',

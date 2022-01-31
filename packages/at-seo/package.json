@@ -28,8 +28,7 @@
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
     "test": "echo \"Write tests!\" && exit 0",
-    "prepublishOnly": "cp package.json dist/",
-    "postpublish": "rm dist/package.json"
+    "prepublishOnly": "cp dist/*.* ."
   },
   "peerDependencies": {
     "@alextim/utils": ">=0.1.1",
@@ -42,7 +41,6 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
-    "access": "public",
-    "directory": "dist"
+    "access": "public"
   }
 }
