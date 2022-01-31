@@ -46,6 +46,12 @@ module.exports = {
     'no-plusplus': 'off',
     'no-unused-vars': 'error',
     'import/no-named-as-default': 0,
+    'import/no-unresolved': [
+      'error',
+      {
+        ignore: ['^@alextim'],
+      },
+    ],
     'prettier/prettier': 'error',
     'react/function-component-definition': 0,
     'react/prop-types': 0,

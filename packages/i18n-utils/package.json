@@ -18,11 +18,15 @@
     "url": "https://github.com/alextim/at-blog/issues"
   },
   "scripts": {
+    "build": "babel src --out-dir dist --ignore \"**/__tests__\" --delete-dir-on-start",
+    "prepare": "cross-env NODE_ENV=production yarn run build",
+    "watch": "babel -w src --out-dir dist --ignore \"**/__tests__\"",
     "test": "echo \"Write tests!\" && exit 0",
-    "build": "echo \"Build isn't needed!\" && exit 0"
+    "prepublishOnly": "cp package.json dist/"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
-    "access": "public"
+    "access": "public",
+    "directory": "dist"
   }
 }

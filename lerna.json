@@ -13,7 +13,7 @@
         "**/__mocks__/**",
         "**/__testfixtures__/**",
         "**/*.md",
-        "**/*test.js"
+        "**/*.test.js"
       ],
       "conventionalCommits": true,
       "message": "chore(release): publish",

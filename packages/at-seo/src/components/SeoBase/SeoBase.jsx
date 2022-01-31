@@ -3,13 +3,14 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import getWebSiteSchema from './getWebSiteSchema';
-import getPageSchema from './getPageSchema';
-import getOrganizationSchema from './getOrganizationSchema';
-import getBreadcrumbsSchema from './getBreadcrumbsSchema';
+import getPageSchema from '../../utils/getPageSchema';
 
-import getTwitterMeta from './getTwitterMeta';
-import getOgMeta from './getOgMeta';
+import getWebSiteSchema from './helpers/getWebSiteSchema';
+import getOrganizationSchema from './helpers/getOrganizationSchema';
+import getBreadcrumbsSchema from './helpers/getBreadcrumbsSchema';
+
+import getTwitterMeta from './helpers/getTwitterMeta';
+import getOgMeta from './helpers/getOgMeta';
 
 const SeoBase = ({
   config,

@@ -1,4 +1,4 @@
-const translit = require('../index');
+const translit = require('../src/index');
 
 const src = {
   Алушта: 'Alushta',

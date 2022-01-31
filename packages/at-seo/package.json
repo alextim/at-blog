@@ -26,7 +26,10 @@
     "url": "https://github.com/alextim/at-blog/issues"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs",
+    "build": "babel src --out-dir dist --ignore \"**/__tests__\" --delete-dir-on-start",
+    "prepare": "cross-env NODE_ENV=production npm run build",
+    "watch": "babel -w src --out-dir dist --ignore \"**/__tests__\"",
+    "build2": "microbundle-crl --no-compress --format modern,cjs",
     "test": "echo \"Write tests!\" && exit 0",
     "prepublishOnly": "cp package.json dist/"
   },
