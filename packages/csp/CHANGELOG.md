@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.13](https://github.com/alextim/at-blog/compare/@alextim/csp@0.1.12...@alextim/csp@0.1.13) (2022-01-31)
+
+**Note:** Version bump only for package @alextim/csp
+
+
+
+
+
 ## [0.1.12](https://github.com/alextim/at-blog/compare/@alextim/csp@0.1.11...@alextim/csp@0.1.12) (2022-01-31)
 
 **Note:** Version bump only for package @alextim/csp
