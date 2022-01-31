@@ -79,4 +79,5 @@ jobs:
 
       - name: Publish
         run: |
+          dir
           lerna publish --no-verify-access # the flag is needed if NPM_TOKEN is an Automation Token
