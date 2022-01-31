@@ -1,7 +1,7 @@
 {
   "name": "@alextim/translit",
   "description": "translit",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "license": "MIT",
   "author": "Oleksii Tymoshenko <buildmnt@gmail.com>",
   "keywords": [
