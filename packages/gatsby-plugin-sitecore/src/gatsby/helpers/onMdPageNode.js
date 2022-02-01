@@ -1,4 +1,4 @@
-const extractData = require('./extractData');
+const getSlugAndLocale = require('./getSlugAndLocale');
 
 const onMdPageNode = (
   { node, actions: { createNode, createParentChildLink }, getNode, createNodeId, createContentDigest },
@@ -9,14 +9,16 @@ const onMdPageNode = (
   const { pageDirs, defaultLang, locales, noIndex } = options;
   const { prefix } = pageDirs[type];
 
-  const result = extractData({ node, getNode }, { prefix, defaultLang, locales });
+  const result = getSlugAndLocale({ node, getNode }, { prefix, defaultLang, locales });
   if (!result) {
     return;
   }
 
-  const { slug, locale, frontmatter } = result;
+  const { slug, locale } = result;
 
-  const { title, headline, metaTitle, metaDescription, cover, datePublished, dateModified, noindex, template, sections } = frontmatter;
+  const {
+    frontmatter: { title, headline, metaTitle, metaDescription, cover, datePublished, dateModified, noindex, template, sections },
+  } = node;
 
   const fieldData = {
     title,
@@ -35,7 +37,7 @@ const onMdPageNode = (
   };
 
   Object.keys(fields).forEach((key) => {
-    fieldData[key] = fields[key](frontmatter);
+    fieldData[key] = fields[key](node.frontmatter);
   });
 
   const mdType = 'MdPage';

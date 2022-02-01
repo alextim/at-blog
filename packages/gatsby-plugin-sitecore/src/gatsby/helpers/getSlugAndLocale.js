@@ -15,7 +15,7 @@ const getSlug = (slug, slugFileName, dir, prefix) => {
   return `/${prefix ? `${prefix}/` : ''}${slugFileName === 'index' ? dir : slugFileName}/`;
 };
 
-const extractData = ({ node, getNode }, { prefix, defaultLang, locales }) => {
+const getSlugAndLocale = ({ node, getNode }, { prefix, defaultLang, locales }) => {
   const { frontmatter } = node;
   if (!frontmatter) {
     throw new Error('Frontmatter is absent!');
@@ -45,7 +45,7 @@ const extractData = ({ node, getNode }, { prefix, defaultLang, locales }) => {
 
   const localizedSlug = i18n.localizePath(slug, locale, defaultLang);
 
-  return { slug: localizedSlug, locale, frontmatter };
+  return { slug: localizedSlug, locale };
 };
 
-module.exports = extractData;
+module.exports = getSlugAndLocale;

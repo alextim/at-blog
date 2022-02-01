@@ -2,7 +2,7 @@ const slugify = require('@alextim/slugify');
 const translit = require('@alextim/translit');
 const i18n = require('@alextim/i18n-utils');
 
-const extractData = require('./extractData');
+const getSlugAndLocale = require('./getSlugAndLocale');
 const { compString } = require('../../lib/comparators');
 
 module.exports = ({ node, actions, getNode, createNodeId, createContentDigest }, options, type) => {
@@ -10,7 +10,7 @@ module.exports = ({ node, actions, getNode, createNodeId, createContentDigest },
 
   const { prefix } = options.postDirs[type];
 
-  const result = extractData({ node, getNode }, { prefix, defaultLang, locales });
+  const result = getSlugAndLocale({ node, getNode }, { prefix, defaultLang, locales });
   if (!result) {
     return;
   }
@@ -27,28 +27,30 @@ module.exports = ({ node, actions, getNode, createNodeId, createContentDigest },
     }));
   };
 
-  const { slug, locale, frontmatter } = result;
+  const { slug, locale } = result;
 
   const { createNode, createParentChildLink } = actions;
 
   const {
-    title,
-    headline,
-    metaTitle,
-    metaDescription,
-    cover,
-    sections,
-    template,
-    noindex,
+    frontmatter: {
+      title,
+      headline,
+      metaTitle,
+      metaDescription,
+      cover,
+      sections,
+      template,
+      noindex,
 
-    category,
-    tags,
-    featured,
+      category,
+      tags,
+      featured,
 
-    datePublished,
-    dateModified,
-    author,
-  } = frontmatter;
+      datePublished,
+      dateModified,
+      author,
+    },
+  } = node;
 
   const year = datePublished ? new Date(datePublished).getFullYear() : null;
   const fieldData = {
