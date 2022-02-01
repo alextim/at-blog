@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-
+const path = require('path');
 const i18n = require('@alextim/i18n-utils');
 
 const wrapper = require('../lib/promise-wrapper');
@@ -30,7 +30,7 @@ module.exports = async ({ graphql, actions, reporter }, pluginOptions) => {
     return purified === '/' ? undefined : purified.toString();
   };
 
-  const pageDefaultTemplate = require.resolve(`${templatesDir}page.jsx`);
+  const pageDefaultTemplate = require.resolve(path.join(templatesDir, 'page.jsx'));
 
   console.log('=====createPages=====');
   const result = await wrapper(
