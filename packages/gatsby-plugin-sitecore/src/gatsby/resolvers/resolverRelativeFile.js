@@ -5,16 +5,19 @@ const normalize = (s) => s.split('\\').join('/');
 // eslint-disable-next-line no-unused-vars
 module.exports = async (source, args, context, info) => {
   const fieldValue = await context.defaultFieldResolver(source, args, context, info);
+
   if (!fieldValue) {
     return null;
   }
 
-  const parentFileNode = context.nodeModel.findRootNodeAncestor(source, (node) => node.internal && node.internal.type === 'File');
-  if (!parentFileNode) {
+  const thisNode = context.nodeModel.getNodeById({ id: context.id });
+  if (!thisNode) {
     return null;
   }
 
-  const { dir } = parentFileNode;
+  const { fileAbsolutePath } = thisNode;
+
+  const dir = path.dirname(fileAbsolutePath);
 
   const resolved = path.resolve(dir, fieldValue);
   const filePath = normalize(resolved);
