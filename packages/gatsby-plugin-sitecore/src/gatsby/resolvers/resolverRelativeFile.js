@@ -10,15 +10,17 @@ module.exports = async (source, args, context, info) => {
     return null;
   }
 
-  const thisNode = context.nodeModel.getNodeById({ id: context.id });
+  const thisNode = await context.nodeModel.getNodeById({ id: context.id });
   if (!thisNode) {
     return null;
   }
 
-  const { fileAbsolutePath } = thisNode;
+  const parentNode = await context.nodeModel.findRootNodeAncestor(thisNode, (node) => node.internal && node.internal.type === 'File');
+  if (!parentNode) {
+    return null;
+  }
 
-  const dir = path.dirname(fileAbsolutePath);
-
+  const { dir } = parentNode;
   const resolved = path.resolve(dir, fieldValue);
   const filePath = normalize(resolved);
 
