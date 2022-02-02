@@ -1,6 +1,7 @@
 const path = require('path');
 
 const normalize = (s) => s.split('\\').join('/');
+const predicat = (node) => node.internal && node.internal.type === 'File';
 
 // eslint-disable-next-line no-unused-vars
 module.exports = async (source, args, context, info) => {
@@ -10,14 +11,14 @@ module.exports = async (source, args, context, info) => {
     return null;
   }
 
-  let parentNode = await context.nodeModel.findRootNodeAncestor(source, (node) => node.internal && node.internal.type === 'File');
+  let parentNode = await context.nodeModel.findRootNodeAncestor(source, predicat);
   if (!parentNode) {
     const thisNode = await context.nodeModel.getNodeById({ id: context.id });
     if (!thisNode) {
       return null;
     }
 
-    parentNode = await context.nodeModel.findRootNodeAncestor(thisNode, (node) => node.internal && node.internal.type === 'File');
+    parentNode = await context.nodeModel.findRootNodeAncestor(thisNode, predicat);
     if (!parentNode) {
       return null;
     }
