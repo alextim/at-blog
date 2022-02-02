@@ -30,8 +30,6 @@ module.exports = async ({ graphql, actions, reporter }, pluginOptions) => {
     return purified === '/' ? undefined : purified.toString();
   };
 
-  const pageDefaultTemplate = require.resolve(path.join(templatesDir, 'page.jsx'));
-
   console.log('=====createPages=====');
   const result = await wrapper(
     graphql(`
@@ -80,6 +78,7 @@ module.exports = async ({ graphql, actions, reporter }, pluginOptions) => {
   if (pages.length === 0) {
     console.warn('\nNo pages');
   } else {
+    const pageDefaultTemplate = require.resolve(path.join(templatesDir, 'page.jsx'));
     console.log(`\nMd pages: ${pages.length}`);
     console.log('---------------');
     pages.forEach(({ node: { id, template, slug, locale } }) => {

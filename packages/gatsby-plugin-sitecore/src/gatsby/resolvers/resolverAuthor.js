@@ -1,4 +1,4 @@
-const authorResolver = () => ({
+const resolverAuthor = {
   author: {
     type: ['String'],
     resolve: async (source, args, context) => {
@@ -25,5 +25,6 @@ const authorResolver = () => ({
       return result.length > 0 ? result : null;
     },
   },
-});
-module.exports = authorResolver;
+};
+
+module.exports = resolverAuthor;
