@@ -10,14 +10,17 @@ module.exports = async (source, args, context, info) => {
     return null;
   }
 
-  const thisNode = await context.nodeModel.getNodeById({ id: context.id });
-  if (!thisNode) {
-    return null;
-  }
-
-  const parentNode = await context.nodeModel.findRootNodeAncestor(thisNode, (node) => node.internal && node.internal.type === 'File');
+  let parentNode = await context.nodeModel.findRootNodeAncestor(source, (node) => node.internal && node.internal.type === 'File');
   if (!parentNode) {
-    return null;
+    const thisNode = await context.nodeModel.getNodeById({ id: context.id });
+    if (!thisNode) {
+      return null;
+    }
+
+    parentNode = await context.nodeModel.findRootNodeAncestor(thisNode, (node) => node.internal && node.internal.type === 'File');
+    if (!parentNode) {
+      return null;
+    }
   }
 
   const { dir } = parentNode;
