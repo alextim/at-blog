@@ -1,7 +1,7 @@
 {
   "name": "@alextim/at-seo",
   "description": "SeoBase & Structured data",
-  "version": "0.4.26",
+  "version": "0.4.27",
   "license": "MIT",
   "author": "Oleksii Tymoshenko <buildmnt@gmail.com>",
   "keywords": [
@@ -35,8 +35,6 @@
   },
   "peerDependencies": {
     "@alextim/utils": ">=0.1.1"
-  },
-  "devDependencies": {
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
