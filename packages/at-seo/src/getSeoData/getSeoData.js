@@ -1,18 +1,12 @@
-/* eslint-disable import/no-unresolved */
-// eslint-disable-next-line no-unused-vars
-import React from 'react';
-import { Helmet } from 'react-helmet';
-
-import getPageSchema from '../../utils/getPageSchema';
+import getPageSchema from '../utils/getPageSchema';
 
 import getWebSiteSchema from './helpers/getWebSiteSchema';
 import getOrganizationSchema from './helpers/getOrganizationSchema';
 import getBreadcrumbsSchema from './helpers/getBreadcrumbsSchema';
-
 import getTwitterMeta from './helpers/getTwitterMeta';
 import getOgMeta from './helpers/getOgMeta';
 
-const SeoBase = ({
+const getSeoData = ({
   config,
   siteMeta,
   i18n,
@@ -190,20 +184,16 @@ const SeoBase = ({
     );
   }
 
-  const scripts = scriptSrc.map((el) => ({
-    type: 'application/ld+json',
-    innerHTML: JSON.stringify(el),
-  }));
-
-  return (
-    <Helmet
-      htmlAttributes={{ lang: htmlLang }}
-      title={metaTitle}
-      meta={[...meta, ...og, ...twitter, ...metas]}
-      link={[...link, ...links]}
-      script={scripts}
-    />
-  );
+  return {
+    htmlAttributes: { lang: htmlLang },
+    title: metaTitle,
+    meta: [...meta, ...og, ...twitter, ...metas],
+    link: [...link, ...links],
+    script: scriptSrc.map((el) => ({
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(el),
+    })),
+  };
 };
 
-export default SeoBase;
+export default getSeoData;

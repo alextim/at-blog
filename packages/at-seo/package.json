@@ -30,18 +30,13 @@
     "prepare:old": "cross-env NODE_ENV=production yarn run build",
     "prepare": "yarn run build",
     "watch": "babel -w src --out-dir dist --ignore \"**/__tests__\"",
-    "build2": "microbundle-crl --no-compress --format modern,cjs",
     "test": "echo \"Write tests!\" && exit 0",
     "prepublishOnly": "cp package.json dist/"
   },
   "peerDependencies": {
-    "@alextim/utils": ">=0.1.1",
-    "react": ">=17.0.2",
-    "react-helmet": ">=6.1.0"
+    "@alextim/utils": ">=0.1.1"
   },
   "devDependencies": {
-    "microbundle-crl": "^0.13.11",
-    "react": "^17.0.2"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",

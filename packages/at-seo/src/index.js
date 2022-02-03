@@ -1,2 +1,2 @@
-export { default as SeoBase } from './components/SeoBase';
+export { default as getSeoData } from './getSeoData';
 export { default as getPageSchema } from './utils/getPageSchema';
