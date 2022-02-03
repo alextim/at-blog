@@ -52,4 +52,4 @@ const getTwitterMeta = ({ metaTitle, metaDescription, imgUrl, twitterImage, twit
   return twitter;
 };
 
-export default getTwitterMeta;
+module.exports = getTwitterMeta;

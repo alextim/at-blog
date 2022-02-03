@@ -1,4 +1,4 @@
-import utils from '@alextim/utils';
+const utils = require('@alextim/utils');
 
 const weekDays = {
   mo: 'Monday',
@@ -190,4 +190,4 @@ const getOrganizationSchema = ({
   return schema;
 };
 
-export default getOrganizationSchema;
+module.exports = getOrganizationSchema;

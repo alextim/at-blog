@@ -69,4 +69,4 @@ const getPageSchema = ({
   return o;
 };
 
-export default getPageSchema;
+module.exports = getPageSchema;

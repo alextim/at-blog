@@ -8,4 +8,4 @@ const getWebSiteSchema = ({ siteUrl, siteTitle, siteDescription, htmlLang }) => 
   inLanguage: htmlLang,
 });
 
-export default getWebSiteSchema;
+module.exports = getWebSiteSchema;

@@ -130,4 +130,4 @@ const getOgMeta = ({
   return og;
 };
 
-export default getOgMeta;
+module.exports = getOgMeta;

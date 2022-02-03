@@ -9,4 +9,4 @@ const getBreadcrumbsSchema = ({ breadcrumbs, siteUrl }) => ({
   })),
 });
 
-export default getBreadcrumbsSchema;
+module.exports = getBreadcrumbsSchema;

@@ -1,12 +1,12 @@
-import getPageSchema from '../utils/getPageSchema';
+const getPageSchema = require('../utils/getPageSchema');
 
-import getWebSiteSchema from './helpers/getWebSiteSchema';
-import getOrganizationSchema from './helpers/getOrganizationSchema';
-import getBreadcrumbsSchema from './helpers/getBreadcrumbsSchema';
-import getTwitterMeta from './helpers/getTwitterMeta';
-import getOgMeta from './helpers/getOgMeta';
+const getWebSiteSchema = require('./helpers/getWebSiteSchema');
+const getOrganizationSchema = require('./helpers/getOrganizationSchema');
+const getBreadcrumbsSchema = require('./helpers/getBreadcrumbsSchema');
+const getTwitterMeta = require('./helpers/getTwitterMeta');
+const getOgMeta = require('./helpers/getOgMeta');
 
-const getSeoData = ({
+function getSeoData({
   config,
   siteMeta,
   i18n,
@@ -30,7 +30,7 @@ const getSeoData = ({
   noindex,
   metas = [],
   links = [],
-}) => {
+}) {
   const isRoot = pathname === '/';
 
   const pageUrl = `${config.siteUrl}${pathname}`;
@@ -194,6 +194,6 @@ const getSeoData = ({
       innerHTML: JSON.stringify(el),
     })),
   };
-};
+}
 
-export default getSeoData;
+module.exports = getSeoData;

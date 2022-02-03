@@ -1,2 +1,4 @@
-export { default as getSeoData } from './getSeoData';
-export { default as getPageSchema } from './utils/getPageSchema';
+const getSeoData = require('./getSeoData/getSeoData');
+const getPageSchema = require('./utils/getPageSchema');
+
+module.exports = { getSeoData, getPageSchema };
