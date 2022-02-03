@@ -1,3 +1,6 @@
+/**
+ * Field extesion @fileByRelativePath don't work properly after update >= v4.6.0
+ */
 const path = require('path');
 
 const normalize = (s) => s.split('\\').join('/');
@@ -11,8 +14,14 @@ module.exports = async (source, args, context, info) => {
     return null;
   }
 
+  /**
+   * first call of findRootNodeAncestor is for lists such as blog, services, object types
+   */
   let parentNode = await context.nodeModel.findRootNodeAncestor(source, predicat);
   if (!parentNode) {
+    /**
+     * secod call of findRootNodeAncestor is for individual pages such as home, contacts, about, post, service etc
+     */
     const thisNode = await context.nodeModel.getNodeById({ id: context.id });
     if (!thisNode) {
       return null;
