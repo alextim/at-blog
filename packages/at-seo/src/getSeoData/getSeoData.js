@@ -34,7 +34,6 @@ function getSeoData({
   const isRoot = pathname === '/';
 
   const pageUrl = `${config.siteUrl}${pathname}`;
-  const homeUrl = i18n ? `${config.siteUrl}${i18n.localizePath('/', locale)}` : pageUrl;
 
   let imgUrl;
   if (imgPath) {
@@ -169,7 +168,6 @@ function getSeoData({
         orgContacts,
         orgAddress,
         config,
-        homeUrl,
         socialLinks,
       }),
     );
