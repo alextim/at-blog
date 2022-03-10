@@ -3,49 +3,49 @@ updates:
   - package-ecosystem: github-actions
     directory: '/'
     schedule:
-      interval: daily
+      interval: monthly
 
   - package-ecosystem: npm
     directory: '/'
     schedule:
-      interval: daily
+      interval: monthly
 
   - package-ecosystem: npm
     directory: '/packages/at-seo'
     schedule:
-      interval: daily
+      interval: monthly
 
   - package-ecosystem: npm
     directory: '/packages/gatsby-plugin-blogcore'
     schedule:
-      interval: daily
+      interval: monthly
 
   - package-ecosystem: npm
     directory: '/packages/gatsby-plugin-sitemap'
     schedule:
-      interval: daily
+      interval: monthly
 
   - package-ecosystem: npm
     directory: '/packages/csp'
     schedule:
-      interval: daily
+      interval: monthly
 
   - package-ecosystem: npm
     directory: '/packages/i18n-utils'
     schedule:
-      interval: daily
+      interval: monthly
 
   - package-ecosystem: npm
     directory: '/packages/slugify'
     schedule:
-      interval: daily
+      interval: monthly
 
   - package-ecosystem: npm
     directory: '/packages/traslit'
     schedule:
-      interval: daily
+      interval: monthly
 
   - package-ecosystem: npm
     directory: '/packages/utils'
     schedule:
-      interval: daily
+      interval: monthly
