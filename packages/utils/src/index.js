@@ -53,16 +53,18 @@ const formatPhone = (s) => {
   }
 
   const n = s.length;
-
+  const trail4 = `${s.substring(n - 4, n - 2)}-${s.substring(n - 2)}`;
+  const last3 = s.substring(n - 7, n - 4);
   if (n === 7) {
-    return `${s.substr(0, 3)}-${s.substr(3, 2)}-${s.substr(5, 2)}`;
+    return `${last3}-${trail4}`;
   }
+  const first3 = s.substring(n - 10, n - 7);
 
   if (n === 10) {
-    return `${s.substr(0, 3)} ${s.substr(3, 3)}-${s.substr(6, 2)}-${s.substr(8, 2)}`;
+    return `${first3} ${last3}-${trail4}`;
   }
-
-  return `+${s.substr(0, 2)} (${s.substr(2, 3)}) ${s.substr(5, 3)}-${s.substr(8, 2)}-${s.substr(10, 2)}`;
+  return `+${s.substring(0, n - 10)} (${first3}) ${last3}-${trail4}`;
+  // return `+${s.substr(0, 2)} (${s.substr(2, 3)}) ${s.substr(5, 3)}-${s.substr(8, 2)}-${s.substr(10, 2)}`;
 };
 
 const isMobile = () => (isSSR() ? undefined : /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent));
