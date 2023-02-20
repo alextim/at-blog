@@ -19,12 +19,8 @@
       "windows": {
         "program": "${workspaceRoot}/node_modules/gatsby/dist/bin/gatsby"
       },
-      "args": [
-        "develop"
-      ],
-      "runtimeArgs": [
-        "--nolazy"
-      ],
+      "args": ["develop"],
+      "runtimeArgs": ["--nolazy"],
       "console": "integratedTerminal"
     },
     {
@@ -35,12 +31,8 @@
       "windows": {
         "program": "${workspaceRoot}/node_modules/gatsby/dist/bin/gatsby"
       },
-      "args": [
-        "build"
-      ],
-      "runtimeArgs": [
-        "--nolazy"
-      ],
+      "args": ["build"],
+      "runtimeArgs": ["--nolazy"],
       "console": "integratedTerminal"
     }
   ]

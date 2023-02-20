@@ -19,8 +19,8 @@
   },
   "scripts": {
     "build": "babel src --out-dir dist --ignore \"**/__tests__\" --delete-dir-on-start",
-    "prepare:old": "cross-env NODE_ENV=production yarn run build",
-    "prepare": "yarn run build",
+    "prepare:old": "cross-env NODE_ENV=production pnpm run build",
+    "prepare": "pnpm run build",
     "watch": "babel -w src --out-dir dist --ignore \"**/__tests__\"",
     "test": "jest",
     "prepublishOnly": "cp package.json dist/"
