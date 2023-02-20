@@ -51,7 +51,6 @@ jobs:
           git config --global user.name "$GITHUB_ACTOR"
           git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
-<<<<<<< HEAD
       #- name: Cache Node Modules
       #  id: cache-node
       #  uses: actions/cache@v2
@@ -61,17 +60,6 @@ jobs:
       #    restore-keys: |
       #      cache-node_modules-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-${{ github.run_id }}
       #      cache-node_modules-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-
-=======
-      - name: Cache Node Modules
-        id: cache-node
-        uses: actions/cache@v3.2.2
-        with:
-          path: '**/node_modules'
-          key: cache-node_modules-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-${{ github.run_id }}
-          restore-keys: |
-            cache-node_modules-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-${{ github.run_id }}
-            cache-node_modules-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-
->>>>>>> 97e7516ba7bdc20af75a0fa94020f3cbc9e9367f
 
       #- name: Install NPM Dependencies
       #  run: yarn install --prefer-offline --frozen-lockfile --ignore-engines --registry https://registry.npmjs.org --network-timeout 300000
