@@ -1,7 +1,7 @@
 {
   "name": "@alextim/gatsby-plugin-sitemap",
   "description": "Replacement for gatsby-plugin-sitemap. Serves: pages and posts with state non 'draft' and related images",
-  "version": "0.4.19",
+  "version": "0.4.20",
   "license": "MIT",
   "author": "Oleksii Tymoshenko <buildmnt@gmail.com>",
   "keywords": [

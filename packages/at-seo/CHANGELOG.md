@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.31](https://github.com/alextim/at-blog/compare/@alextim/at-seo@0.4.30...@alextim/at-seo@0.4.31) (2023-02-20)
+
+**Note:** Version bump only for package @alextim/at-seo
+
+
+
+
+
 ## [0.4.30](https://github.com/alextim/at-blog/compare/@alextim/at-seo@0.4.29...@alextim/at-seo@0.4.30) (2022-03-10)
 
 **Note:** Version bump only for package @alextim/at-seo
