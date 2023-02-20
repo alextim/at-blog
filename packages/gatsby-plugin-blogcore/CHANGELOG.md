@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.36](https://github.com/alextim/at-blog/compare/@alextim/gatsby-plugin-blogcore@0.8.35...@alextim/gatsby-plugin-blogcore@0.8.36) (2023-02-20)
+
+**Note:** Version bump only for package @alextim/gatsby-plugin-blogcore
+
+
+
+
+
 ## [0.8.35](https://github.com/alextim/at-blog/compare/@alextim/gatsby-plugin-blogcore@0.8.34...@alextim/gatsby-plugin-blogcore@0.8.35) (2022-03-10)
 
 **Note:** Version bump only for package @alextim/gatsby-plugin-blogcore
