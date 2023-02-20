@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.37](https://github.com/alextim/at-blog/compare/@alextim/gatsby-plugin-blogcore@0.8.36...@alextim/gatsby-plugin-blogcore@0.8.37) (2023-02-20)
+
+
+### Bug Fixes
+
+* deprication of sort ([ab1ac46](https://github.com/alextim/at-blog/commit/ab1ac46c60b5c8e6cffcf647e2e4353d4512fa8c))
+
+
+
+
+
 ## [0.8.36](https://github.com/alextim/at-blog/compare/@alextim/gatsby-plugin-blogcore@0.8.35...@alextim/gatsby-plugin-blogcore@0.8.36) (2023-02-20)
 
 **Note:** Version bump only for package @alextim/gatsby-plugin-blogcore
