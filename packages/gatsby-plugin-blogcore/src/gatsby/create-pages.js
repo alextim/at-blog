@@ -44,7 +44,7 @@ module.exports = async ({ graphql, actions, reporter }, pluginOptions) => {
             }
           }
         }
-        posts: allMdPost(limit: 1000, filter: { type: { eq: "blog" } }, sort: { fields: [datePublished], order: DESC }) {
+        posts: allMdPost(limit: 1000, filter: { type: { eq: "blog" } }, sort: { datePublished: DESC }) {
           edges {
             node {
               id
