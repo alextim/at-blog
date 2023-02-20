@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.24](https://github.com/alextim/at-blog/compare/@alextim/utils@0.1.23...@alextim/utils@0.1.24) (2022-03-10)
+
+
+### Bug Fixes
+
+* formatPhone, fixed parentheses ([e403e06](https://github.com/alextim/at-blog/commit/e403e06b6555307a98bf3a4d8ba0d4a5d597b5bf))
+
+
+
+
+
 ## [0.1.23](https://github.com/alextim/at-blog/compare/@alextim/utils@0.1.22...@alextim/utils@0.1.23) (2022-02-01)
 
 **Note:** Version bump only for package @alextim/utils
