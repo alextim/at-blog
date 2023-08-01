@@ -10,7 +10,7 @@ importers:
     devDependencies:
       '@babel/cli':
         specifier: ^7.20.7
-        version: 7.20.7(@babel/core@7.20.12)
+        version: 7.22.9(@babel/core@7.20.12)
       '@babel/core':
         specifier: ^7.20.12
         version: 7.20.12
@@ -172,8 +172,8 @@ packages:
       tslib: 2.0.3
     dev: false
 
-  /@babel/cli@7.20.7(@babel/core@7.20.12):
-    resolution: {integrity: sha512-WylgcELHB66WwQqItxNILsMlaTd8/SO6SgTTjMp4uCI7P4QyH1r3nqgFmO3BfM4AtfniHgFMH3EpYFj/zynBkQ==}
+  /@babel/cli@7.22.9(@babel/core@7.20.12):
+    resolution: {integrity: sha512-nb2O7AThqRo7/E53EGiuAkMaRbb7J5Qp3RvN+dmua1U+kydm0oznkhqbTEG15yk26G/C3yL6OdZjzgl+DMXVVA==}
     engines: {node: '>=6.9.0'}
     hasBin: true
     peerDependencies:
