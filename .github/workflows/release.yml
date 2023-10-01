@@ -28,7 +28,7 @@ jobs:
 
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # pulls all history and tags for Lerna to detect what packages changed.
           token: ${{ secrets.GITHUB_TOKEN }} # this token is available by default
